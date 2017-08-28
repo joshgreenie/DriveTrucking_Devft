@@ -1,0 +1,21 @@
+a {
+	color: $color_blue;
+	text-decoration: none;
+	@include transition();
+
+	&:visited {
+		color: $color_blue;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color_gold;
+	}
+	&:focus {
+		outline: thin dotted;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}

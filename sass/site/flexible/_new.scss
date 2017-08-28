@@ -1,0 +1,196 @@
+
+
+div#flex {
+  font-size: 0;
+  > * {
+    font-size: initial;
+  }
+}
+
+.section {
+  padding: 80px 0;
+}
+
+
+.blue-chevron-faded {
+  position: relative;
+  &:after {
+    content: '';
+    background-image: url(images/blue-strip-2.svg);
+    position: absolute;
+    top: -5px;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+  }
+}
+
+
+a.blue-arrow {
+  //background-color: $color_dark_blue;
+  //border-bottom: 3px solid $color_orange;
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  font-size: 1.65em;
+  text-transform: uppercase;
+  margin: 60px auto 0;
+  padding: 20px 100px 0px 100px;
+  border-bottom: 0;
+  min-width: 340px;
+  text-align: center;
+  font-weight: bold;
+
+  &:after {
+    content: '';
+    background-image: url(images/blue-arrow.svg);
+    padding-top: 17%;
+    width: calc(100% + 200px);
+    display: block;
+    margin: 0 -200px;
+    position: relative;
+    right: -100px;
+    background-size: 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    z-index: 0;
+    min-height: 35px;
+  }
+  &:before {
+    content: '';
+    display: block;
+    background-color: $color_dark_blue;
+    width: 100%;
+    position: absolute;
+    height: 59px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+footer#colophon .site-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color:white;
+}
+@media screen and (max-width: $breakpoint-small-desktop){
+  footer#colophon .site-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer#colophon .site-info span:first-child {
+    margin-bottom: 10px;
+  }
+}
+/*--------------------------------------------------------------
+## Form header
+--------------------------------------------------------------*/
+@import "form-header";
+
+/*--------------------------------------------------------------
+## Split-Chevron
+--------------------------------------------------------------*/
+@import "split-chevron";
+
+/*--------------------------------------------------------------
+## Jobs
+--------------------------------------------------------------*/
+@import "jobs";
+
+/*--------------------------------------------------------------
+## Page Header
+--------------------------------------------------------------*/
+@import "page-header";
+
+/*--------------------------------------------------------------
+## Form Shelf
+--------------------------------------------------------------*/
+@import "form-shelf";
+/*--------------------------------------------------------------
+## Forms
+--------------------------------------------------------------*/
+@import "forms";
+
+
+
+/*===================================
+Dont show over 980px - Menu Styles here
+===================================*/
+
+@media (min-width: $breakpoint-tablet) {
+
+}
+
+
+
+.testimonials-wrapper.with-banner .testimonial-content {width: 630px;}
+
+
+/*===================================
+  Media Queries
+===================================*/
+
+
+@media (max-width: 1700px) {
+  .grid-container {
+    max-width:1440px;
+  }
+}
+
+
+@media (max-width: $breakpoint-desktop) {
+  .grid-container {
+    max-width:1150px;
+  }
+}
+
+
+@media (max-width: 1400px) and (min-width: 980px) {
+
+}
+@media (max-width: $breakpoint-small-desktop) {
+  .grid-container {
+    max-width:950px;
+  }
+
+}
+
+
+@media (min-width: $breakpoint-tablet) {
+
+}
+@media (max-width: $breakpoint-tablet) {
+  .grid-container {
+    max-width:750px;
+  }
+
+  span.hide-mobile {
+    display: none;
+  }
+
+}
+
+
+@media (max-width: $breakpoint-small-tablet) {
+  .grid-container {
+    max-width:450px;
+  }
+
+}
+
+
+
+@media (max-width: $breakpoint-phone) {
+  .grid-container {
+    max-width:280px;
+  }
+
+}
+
+

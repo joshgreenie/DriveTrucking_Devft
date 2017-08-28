@@ -1,0 +1,29 @@
+.page-header {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 0;
+  }
+  > div {
+
+    position: relative;
+    z-index: 1;
+  }
+  .page.heading {
+    padding: 25px 0;
+    color: #03243b;
+    font-style: italic;
+    font-family: 'Droid Serif', times new roman;
+    font-weight: bolder;
+    font-size: 2.4em;
+  }
+}

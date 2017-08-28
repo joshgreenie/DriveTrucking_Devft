@@ -1,0 +1,83 @@
+[class^=button-], a[class^=button-]{
+  text-align: center;
+  font-family: $font__header;
+  @include font-size(1.2);
+  text-decoration: none;
+  padding: 10px 40px;
+  min-width: 200px;
+  border-radius: 7px;
+  @include transition(all, .25s, ease-in-out);
+}
+[class^=button-small-], a[class^=button-small-]{
+  text-align: center;
+  font-family: $font__header;
+  @include font-size(.9);
+  text-decoration: none;
+  padding: 5px 15px;
+  min-width: 100px;
+  border-radius: 5px;
+  @include transition(all, .25s, ease-in-out);
+}
+.button-white-outline, a.button-white-outline{
+  border:3px solid #FFFFFF;
+  color: #FFFFFF !important;
+  position: relative;
+}
+.button-white-outline:hover, a.button-white-outline:hover{
+  background: #FFFFFF !important;
+  color: $color_bright_gold !important;
+}
+.button-white-outline:after, a.button-white-outline:after{
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  background: #FFFFFF;
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.button-white-outline:hover:after, a.button-white-outline:hover:after{
+  height: 100%;
+  border-bottom: 6px solid darken($color_bright_gold, 10%);
+}
+// Gold
+.button-gold, a.button-gold{
+  width: auto;
+  margin: 2% auto;
+  display: inline-block;
+  color: #FFFFFF !important;
+  background: $color_gold !important;
+  position: relative;
+}
+.button-gold:hover, a.button-gold:hover{
+  background: $color_bright_gold !important;
+  color: #FFF !important;
+}// Blue
+.button-blue, a.button-blue{
+  width: auto;
+  margin: 2%;
+  display: inline-block;
+  color: #FFFFFF !important;
+  background: $color_blue !important;
+  position: relative;
+}
+
+.button-blue:hover, a.button-blue:hover{
+  background: lighten($color_blue,10%) !important;
+  color: #FFF !important;
+}
+.button-small-blue, a.button-small-blue{
+  width: auto;
+  margin: 1% auto;
+  display: inline-block;
+  color: #FFFFFF !important;
+  background: $color_blue !important;
+  &:hover{
+    background: lighten($color_blue,10%) !important;
+    color: #FFF !important;
+  }
+}

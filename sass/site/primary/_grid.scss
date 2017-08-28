@@ -1,0 +1,222 @@
+.grid-container{
+  @include j-center($max-width);
+  @include clearfix;
+  width:100%;
+}
+//Set Column Grid classes
+.one{
+  @include j-column(1);
+}
+.one-half{
+  @include j-column(1/2);
+  @media screen and (max-width: 768px){
+    @include j-column(1);
+  }
+}
+.one-third{
+  @include j-column(1/3, $cycle: 3, $gutter:1.5);
+  @media screen and (max-width: 768px){
+    @include j-column(1);
+  }
+}
+.one-fourth{
+  @include j-column(1/4, $cycle: 4, $gutter:1.5);
+  @media screen and (max-width: 960px){
+    @include j-column(1/2, $cycle: 2, $gutter:1.5);
+  }
+  @media screen and (max-width: 640px){
+    @include j-column(1, $cycle: 1, $gutter:1.5);
+  }
+}
+.one-fifth{
+  @include j-column(1/5, $cycle: 5, $gutter:1.5);
+  @media screen and (max-width: 960px){
+    @include j-column(1/3, $cycle: 3, $gutter:1.5);
+  }
+  @media screen and (max-width: 480px){
+    @include j-column(1, $cycle: 1, $gutter:1.5);
+  }
+}
+.one-sixth{
+  @include j-column(1/6);
+  @media screen and (max-width: 768px){
+    @include j-column(1/3);
+  }
+  @media screen and (max-width: 480px){
+    @include j-column(1);
+  }
+}
+.one-seventh{
+  @include j-column(1/7);
+  @media screen and (max-width: 960px){
+    @include j-column(1/5);
+  }
+  @media screen and (max-width: 768px){
+    @include j-column(1/3);
+  }
+  @media screen and (max-width: 480px){
+    @include j-column(1);
+  }
+}
+.one-eighth{
+  @include j-column(1/8);
+  @media screen and (max-width: 960px){
+    @include j-column(1/4);
+  }
+  @media screen and (max-width: 480px){
+    @include j-column(1);
+  }
+}
+.one-ninth{
+  @include j-column(1/9);
+  @media screen and (max-width: 960px){
+    @include j-column(1/6);
+  }
+  @media screen and (max-width: 768px){
+    @include j-column(1/3);
+  }
+  @media screen and (max-width: 480px){
+    @include j-column(1);
+  }
+}
+.one-tenth{
+  @include j-column(1/10);
+}
+.three-quarters{
+  @include j-column(3/4);
+}
+//Set Span Grid classes
+.span-one{
+  @include j-span(1);
+}
+.span-one-half{
+  @include j-span(1/2);
+  @media screen and (max-width: 480px){
+    @include j-span(1);
+  }
+}
+.span-one-third{
+  @include j-span(1/3);
+  @media screen and (max-width: 640px){
+    @include j-span(1);
+  }
+}
+.span-one-fourth{
+  @include j-span(1/4);
+  @media screen and (max-width: 960px){
+    @include j-span(1/2);
+  }
+  @media screen and (max-width: 480px){
+    @include j-span(1);
+  }
+}
+.span-one-fifth{
+  @include j-span(1/5);
+  @media screen and (max-width: 768px){
+    @include j-span(1/3);
+  }
+  @media screen and (max-width: 480px){
+    @include j-span(1);
+  }
+}
+.span-one-sixth{
+  @include j-span(1/6);
+  @media screen and (max-width: 768px){
+    @include j-span(1/3);
+  }
+  @media screen and (max-width: 480px){
+    @include j-span(1/2);
+  }
+}
+.span-one-seventh{
+  @include j-span(1/7);
+  @media screen and (max-width: 960px){
+    @include j-span(1/5);
+  }
+  @media screen and (max-width: 768px){
+    @include j-span(1/3);
+  }
+  @media screen and (max-width: 480px){
+    @include j-span(1);
+  }
+}
+.span-one-eighth{
+  @include j-span(1/8);
+  @media screen and (max-width: 960px){
+    @include j-span(1/4);
+  }
+  @media screen and (max-width: 480px){
+    @include j-span(1/2);
+  }
+}
+.span-one-ninth{
+  @include j-span(1/9);
+  @media screen and (max-width: 960px){
+    @include j-span(1/6);
+  }
+  @media screen and (max-width: 768px){
+    @include j-span(1/3);
+  }
+  @media screen and (max-width: 480px){
+    @include j-span(1);
+  }
+}
+.span-one-tenth{
+  @include j-span(1/10);
+}
+.span-three-quarters{
+  @include j-span(3/4);
+  @media screen and (max-width: 480px){
+    @include j-span(1);
+  }
+}
+
+.category-grid{
+  width: 100%;
+  padding-bottom: 66.25%; /* 16:9 */
+  position: relative;
+  overflow: hidden;
+
+  background-color: rgba(0,0,0,.8);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center !important;
+  .container{
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    color: white;
+    text-align: center;
+    h2{
+      margin-top: 80px;
+      font-size: 1.4em;
+      @include transition(all, ease-in-out, .2s );
+      @media screen and (max-width: 960px){
+        margin-top: 50px;
+      }
+    }
+    h3{
+      margin-top: 80px;
+      font-size: 1.4em;
+      @include transition(all, ease-in-out, .2s );
+      @media screen and (max-width: 960px){
+        margin-top: 50px;
+      }
+    }
+    [class^=button-]{
+      width: 65%;
+      margin: 300px auto 0;
+      @media screen and (max-width: 960px){
+        margin: 10px auto;
+      }
+    }
+  }
+}
+.category-grid:hover [class^=button-]{
+  margin: 10px auto;
+}
+.category-grid:hover h2{
+  margin-top: 50px;
+}
+.category-grid:hover h3{
+  margin-top: 30px;
+}
