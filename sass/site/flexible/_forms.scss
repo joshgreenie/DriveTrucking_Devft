@@ -1,78 +1,301 @@
-div:not(.form-header) {
-  .gform_wrapper .gform_footer {
 
-    display: inline-block !important;
-    width: auto !important;
-    text-align: center;
-    padding: 0 !important;
-    position: relative;
-    margin-top: 30px;
+.gform_wrapper {
+  ul.gform_fields {
 
-
-    &:after {
-      content: '';
-      background-image: url(images/blue-arrow.svg);
-      padding-top: 12%;
-      width: calc(100% + 00px);
-      display: block;
-      //margin: 0 -200px;
-      //position: relative;
-      //right: -100px;
-      background-size: 100%;
-      background-position: center bottom;
-      background-repeat: no-repeat;
-      z-index: 0;
-      min-height: 35px;
-      margin-top: -2%;
+    div.ginput_recaptcha {
+      margin: 20px 0 0 0 !important;
+      display: inline-block;
+      @media screen and (max-width: $breakpoint-phone) {
+        overflow: hidden;
+        position: relative;
+        max-width: 238px;
+      }
     }
-    &:before {
-      content: '';
-      display: block;
-      background-color: #02233A;
-      width: 100%;
-      position: absolute;
-      height: 40px;
-      top: 0;
-      left: 0;
-      z-index: 0;
+
+    .inline_label {
+      color: #A4A6A9;
+      display: inline-flex !important;
+      padding: 20px 0 10px !important;
+      align-items: center;
+
+      @media screen and (max-width: $breakpoint-small-desktop) {
+        align-items: flex-start;
+        padding: 0px 0 0 15px !important;
+        margin-top: 20px;
+        > label {
+          padding-top: 5px;
+        }
+      }
+      @media screen and (max-width: $breakpoint-small-tablet) {
+        display: block !important;
+        margin-top: 14px !important;
+        > label {
+          text-indent: 15px;
+        }
+      }
+
+      @media screen and (max-width: $breakpoint-phone) {
+
+        label {
+          text-indent: 0;
+        }
+      }
+
+      ul.gfield_radio {
+        display: inline-flex;
+        margin: 0;
+        padding-left: 51px !important;
+        @media screen and (max-width: $breakpoint-small-desktop) {
+          flex-direction: column;
+        }
+
+        @media screen and (max-width: $breakpoint-small-tablet) {
+          flex-direction: row;
+        }
+        @media screen and (max-width: $breakpoint-phone) {
+          padding: 0 !important;
+        }
+
+        li {
+          margin-right: 30px !important;
+          margin-bottom: 0 !important;
+          label {
+            padding: 0 15px !important;
+            color: #A4A6A9;
+
+          }
+        }
+      }
+      .ginput_container.ginput_container_radio {
+        margin: 0 !important;
+      }
+    }
+
+    li.hidden_label input {
+      margin-top: 10px;
+
+      @media screen and (max-width: $breakpoint-small-tablet) {
+
+      margin-top: 20px;
+      }
+    }
+
+
+    li.gfield {
+
+      margin-top: 0;
+
+      @media screen and (max-width: $breakpoint-small-tablet) {
+      padding: 0;
+      }
+      &.inline_password {
+        margin-top: 50px;
+
+
+        @media screen and (max-width: $breakpoint-small-tablet) {
+        display: inline-block;
+        width: 100%;
+        }
+
+        span {
+          width: calc(50% - 7px);
+        @media screen and (max-width: $breakpoint-small-tablet) {
+          width: 100%;
+          padding: 0 !important;
+          margin: 0;
+        }
+          &.ginput_right {
+            float: right;
+            padding-right: 4px;
+            padding-left: 4px;
+          }
+          &.ginput_left {
+            padding-right: 8px;
+          }
+        }
+      }
     }
   }
 
-  .gform_wrapper .gform_footer input.button,
-  .gform_wrapper .gform_footer input[type=submit],
-  .gform_wrapper .gform_page_footer input.button,
-  .gform_wrapper .gform_page_footer input[type=submit] {
-    z-index: 3;
-    color: #fff;
-    font-size: 1.65em;
-    text-transform: uppercase;
-    margin: 0 0 -13% 0 !important;
-    border-bottom: 0;
-    min-width: 340px;
-    text-align: center;
-    box-shadow: none;
-    border: none;
-    background: none;
-    //margin: 0 !important;
-    //position: static;
-    font-size: 1.65em !important;
-    //z-index: 1;
-    position: relative;
-    padding-bottom: 13%;
-  }
+  .top_label {
 
-  .gform_wrapper form {
-    text-align: center !important;
-    margin: 100px auto -6% !important;
-  }
+    li ul.gfield_radio {
 
-  li.gfield {
-    text-align: left !important;
+      @media screen and (max-width: $breakpoint-small-tablet) {
+
+      }
+      li {
+        position: relative;
+
+        label {
+          font-weight: normal !important;
+          font-size: 1em;
+          max-width: 100%;
+          padding: 0 20px 0 25px !important;
+          &:before,
+          &:after {
+            content: '';
+            height: 15px;
+            width: 15px;
+            display: block;
+            background: transparent;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            border-radius: 50%;
+            border: 1px solid #414042;
+            transition: all .35s ease;
+          }
+          &:before {
+            background: #414042;
+            opacity: 0;
+            transform: scale(0);
+          }
+        }
+        input:checked + label:before {
+          opacity: 1;
+          transform: scale(1);
+        }
+        input {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: block;
+          width: 100% !important;
+          margin: 0 !important;
+          height: 100%;
+          opacity: 0;
+        }
+
+      }
+    }
   }
 }
 
-@media screen and (max-width: 641px){
+.gform_wrapper .gform_footer {
+
+  display: inline-block !important;
+  width: auto !important;
+  text-align: center;
+  padding: 0 !important;
+  position: relative;
+  margin-top: 30px;
+
+  @media screen and (max-width: $breakpoint-small-tablet) {
+    width: 100%;
+    display: block !important;
+  }
+
+  @media screen and (max-width: $breakpoint-phone) {
+    margin: 20px -21px -45px!important;
+  }
+
+
+  &:after {
+    content: '';
+    background-image: url(images/blue-arrow.svg);
+    padding-top: 12%;
+    width: calc(100% + 00px);
+    display: block;
+    //margin: 0 -200px;
+    //position: relative;
+    //right: -100px;
+    background-size: 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    z-index: 0;
+    min-height: 35px;
+    margin-top: -2%;
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      //margin-top: -4%;
+      margin-top: -2%;
+    }
+    @media screen and (max-width: $breakpoint-phone) {
+      margin-top: -4% !important;
+      //margin-top: -2%;
+    }
+  }
+  &:before {
+    content: '';
+    display: block;
+    background-color: #02233A;
+    width: 100%;
+    position: absolute;
+    height: 40px;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      height: 45px !important;
+    }
+    @media screen and (max-width: $breakpoint-small-tablet) {
+      height: 28px !important;
+    }
+  }
+}
+
+.gform_wrapper .gform_footer input.button,
+.gform_wrapper .gform_footer input[type=submit],
+.gform_wrapper .gform_page_footer input.button,
+.gform_wrapper .gform_page_footer input[type=submit] {
+  z-index: 3;
+  color: #fff;
+  font-size: 1.65em;
+  text-transform: uppercase;
+  margin: 0 0 -13% 0 !important;
+  border-bottom: 0;
+  min-width: 340px;
+  text-align: center;
+  box-shadow: none;
+  border: none;
+  background: none;
+  //margin: 0 !important;
+  //position: static;
+  font-size: 1.65em !important;
+  //z-index: 1;
+  position: relative;
+  padding-bottom: 13%;
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    padding-top: 22px;
+    padding-bottom: 11%;
+  }
+
+  @media screen and (max-width: $breakpoint-small-tablet) {
+    min-width: 100% !important;
+    max-width: 100% !important;
+    padding: 8px 0 0%  0 !important;
+    display: block;
+    width: 100%;
+    font-size: 1.4em !important;
+    margin-bottom: 0% !important;
+  }
+}
+
+.gform_wrapper form {
+  text-align: center !important;
+  margin: 00px auto -6% !important;
+}
+
+li.gfield {
+  text-align: left !important;
+
+  @media screen and (min-width: $breakpoint-desktop) {
+    margin-top: 20px;
+    padding-right: 30px !important;
+  }
+}
+
+@media screen and (max-width: 641px) {
   .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) {
     line-height: 1 !important;
   }
 }
+

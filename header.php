@@ -84,7 +84,7 @@ $login_text = get_field('login_text', 'option');
 
 
             <nav id="site-navigation" class="main-navigation close" role="navigation">
-                <?php wp_nav_menu(array('menu' => 'main-menu')); ?>
+                <?php wp_nav_menu(array('menu' => 'new-menu')); ?>
             </nav><!-- #site-navigation -->
         </div>
         <div id="mobile-trigger">

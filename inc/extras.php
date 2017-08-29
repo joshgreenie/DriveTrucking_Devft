@@ -283,4 +283,9 @@ $states = array(
 }
 
 
+// Gravity form bits
+
+
 add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+
+add_filter( 'gform_enable_password_field', '__return_true' );

@@ -38,6 +38,13 @@ $background_image_url = $background_image['url'];
                                 enableZoom: false,
                                 selectedRegions: null,
                                 showTooltip: true,
+                                onRegionClick: function(element, code, region)
+                                {
+                                    var regionTrim = region.replace(/\s+/g, '-').toLowerCase(),
+                                        urlBase = window.location.protocol + "//" + window.location.host + "/";
+
+                                    window.location.replace(urlBase+'/location/'+regionTrim);
+                                }
                             });
                         });
                     })(jQuery);
