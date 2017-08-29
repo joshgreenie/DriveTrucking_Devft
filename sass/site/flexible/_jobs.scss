@@ -19,7 +19,7 @@
     flex-wrap: wrap;
     align-items: stretch;
     background: #E3E4E5;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 50px 15px 15px 15px;
     box-shadow: inset 0px 0px 15px rgb(217, 217, 217);
     position: relative;
@@ -127,6 +127,9 @@
   width: 100%;
   flex-basis: 100%;
   margin-bottom: 40px;
+  max-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .job-feed .post-content .post-footer {

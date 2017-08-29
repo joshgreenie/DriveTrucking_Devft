@@ -34,6 +34,8 @@
   display: inline-block;
   width: 100%;
   position: relative;
+  background-size: cover;
+  background-position: center;
 
   @media screen and (min-width: $breakpoint-tablet) {
     .grid-container .grid-container {
@@ -47,6 +49,24 @@
     > .grid-container {
       max-width: 100%;
       background-image: inherit;
+
+      &:after,
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 50%;
+        padding-top: 9.4%;
+        top: calc(100% + 550px);
+        left: 0;
+        right: 0;
+        z-index: 10;
+        background: linear-gradient(to bottom left, #124b7b 0%, #124b7b 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+      }
+      &:after {
+        left: auto;
+        background: linear-gradient(to bottom right, #124b7b 0%, #124b7b 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+      }
     }
   }
   @media screen and (max-width: $breakpoint-tablet) {
@@ -70,21 +90,45 @@
     bottom: 0;
     background: rgba(255, 255, 255, 0.5);
     z-index: 0;
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      bottom: auto;
+      height: 521px;
+      z-index: 3;
+    }
+    @media screen and (max-width: $breakpoint-small-tablet) {
+      height: 516px;
+    }
   }
   > div {
     z-index: 1;
     position: relative;
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      z-index: initial;
+    }
+
   }
 
   .primary-content {
     padding: 35px 0;
-    width: calc(100% - 420px);
     float: left;
     clear: none;
     margin-left: 0;
     margin-right: 1.5%;
     min-height: 490px;
+    width: calc(100% - 520px);
 
+    @media screen and (max-width: $breakpoint-tablet) {
+      .grid-container {
+        position: relative;
+        z-index: 99999;
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-desktop) {
+      width: calc(100% - 420px);
+    }
     @media screen and (max-width: $breakpoint-tablet) {
       width: 100%;
       margin: 0;
@@ -94,6 +138,12 @@
     div#vmap {
       height: auto;
       width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+
+      @media screen and (max-width: $breakpoint-desktop) {
+        max-width: 900px;
+      }
 
       svg {
         position: absolute;
@@ -106,10 +156,13 @@
       }
       &:after {
         content: '';
-        padding-top: 28%;
+        padding-top: 50%;
         display: block;
-        min-height: 300px;
+        min-height: 370px;
 
+        @media screen and (max-width: $breakpoint-phone) {
+          min-height: 260px;
+        }
       }
     }
 
@@ -120,7 +173,12 @@
       margin: 0;
     }
   }
-
+  .grid-container.mobile-form-wrap {
+    @media screen and (max-width: $breakpoint-tablet) {
+      position: relative;
+      z-index: 99;
+    }
+  }
   .form-content {
     margin-bottom: -20px;
     background: #fff;
@@ -130,15 +188,25 @@
     height: 100%;
     display: flex;
     clear: none;
-    width: 420px;
     margin-left: 0;
+    width: 520px;
 
+    @media screen and (max-width: $breakpoint-desktop) {
+      width: 420px;
+
+    }
     @media screen and (max-width: $breakpoint-tablet) {
       left: 0;
       right: 0;
       margin: auto;
-      min-height: 495px;
+      min-height: 530px;
+      width: 640px;
     }
+
+    @media screen and (max-width: $breakpoint-small-tablet) {
+      width: 100%;
+    }
+
     &:after {
       content: '';
       display: block;
@@ -146,19 +214,36 @@
       width: 100%;
       left: 0;
       top: 100%;
-      border: 210px solid transparent;
-      border-top: 40px solid #fff;
+      border: 260px solid transparent;
+      border-top: 50px solid #fff;
+
+      @media screen and (max-width: $breakpoint-desktop) {
+        border: 210px solid transparent;
+        border-top: 40px solid #fff;
+      }
+
+      @media screen and (max-width: $breakpoint-tablet) {
+        border: 320px solid transparent;
+        border-top: 60px solid #fff;
+      }
+      @media screen and (max-width: $breakpoint-small-tablet) {
+        border: 225px solid transparent;
+        border-top: 42px solid #fff;
+      }
     }
 
     .form-wrapper {
       border-left: 1px solid #000;
       border-right: 1px solid #000;
-      padding: 20px 30px;
+      padding: 20px 40px;
       position: absolute;
       height: calc(100% - 20px);
       right: 25px;
       left: 25px;
 
+      @media screen and (max-width: $breakpoint-desktop) {
+        padding: 20px 30px;
+      }
       &:after,
       &:before {
         content: '';
@@ -166,14 +251,29 @@
         width: calc(50% + 4px);
         position: absolute;
         left: -2px;
-        bottom: -19px;
         z-index: 1;
         transform: rotate(11deg) translate3d(0, 0, 0);
+
+        bottom: -23px;
+        @media screen and (max-width: $breakpoint-desktop) {
+          bottom: -19px;
+        }
+        @media screen and (max-width: $breakpoint-tablet) {
+          bottom: -30px;
+          left: -3px;
+          width: calc(50% + 6px);
+        }
+        @media screen and (max-width: $breakpoint-small-tablet) {
+          bottom: -20px;
+        }
       }
       &:before {
         transform: rotate(-11deg) translate3d(0, 0, 0);
         left: auto;
         right: -2px;
+        @media screen and (max-width: $breakpoint-tablet) {
+          right: -3px !important;
+        }
       }
 
       .gform_wrapper {
@@ -184,6 +284,23 @@
         .gform_footer {
           max-width: 100%;
           width: 100% !important;
+          margin-top: 57px;
+
+          @media screen and (max-width: $breakpoint-large-desktop) {
+            margin-top: 37px;
+          }
+
+          @media screen and (max-width: $breakpoint-desktop) {
+            margin-top: 30px;
+          }
+
+          @media screen and (max-width: $breakpoint-tablet) {
+            margin-top: 50px;
+            z-index: 9;
+          }
+          @media screen and (max-width: $breakpoint-small-tablet) {
+            margin-top: 26px;
+          }
         }
         button, input[type="button"], input[type="reset"], input[type="submit"] {
           max-width: 100%;
@@ -191,10 +308,16 @@
         }
         h3.gform_title {
           display: block;
-          margin: 0 0 10px 0;
-          font-size: 1.8rem;
+          margin: 20px 0 10px 0;
+          font-family: 'Droid Serif', sans-serif;
+          color: $color_dark_blue;
+          font-size: 2.2rem;
           font-style: italic;
           text-transform: uppercase;
+
+          @media screen and (max-width: $breakpoint-desktop) {
+            font-size: 1.8rem;
+          }
         }
 
         .gform_heading {
@@ -202,7 +325,12 @@
         }
 
         span.gform_description {
-          font-size: 14px;
+          font-size: 1.2em;
+          margin: 15px 0 30px;
+          @media screen and (max-width: $breakpoint-desktop) {
+            font-size: 14px;
+            margin: 0;
+          }
         }
         //.gform_footer {
         //  padding: 0 0px 0px 0;
@@ -250,15 +378,31 @@
         //}
 
         .top_label li.gfield {
-          margin-top: 15px;
+          margin-top: 20px;
           padding: 0 !important;
+
+          @media screen and (max-width: $breakpoint-desktop) {
+            margin-top: 15px;
+          }
+
+          @media screen and (max-width: $breakpoint-tablet) {
+            margin-top: 20px;
+          }
+
           .ginput_container {
             margin: 0 !important;
 
             input:not(.button) {
               border-radius: 0;
               margin: 0 !important;
-              padding: 10px 15px !important;
+              padding: 15px 15px !important;
+              @media screen and (max-width: $breakpoint-large-desktop) {
+                padding: 12px 15px !important;
+              }
+
+              @media screen and (max-width: $breakpoint-desktop) {
+                padding: 10px 15px !important;
+              }
             }
           }
         }
@@ -283,13 +427,42 @@
     right: calc(50% - 110px);
   }
 
-  .form-header:after {
-    height: 560px;
+  .form-header:before {
+    height: 490px;
   }
 
-  div:not(.form-header) .gform_wrapper .gform_footer:after {
-    margin-top: -6%;
+  .form-header:after {
+    height: 550px;
   }
+
+  .form-header > .grid-container:after, .form-header > .grid-container:before {
+    top: calc(100% + 550px);
+  }
+
+  .form-header .form-content .form-wrapper .gform_wrapper h3.gform_title {
+    font-size: 1.3em;
+  }
+
+  #flex div:not(.form-header) .gform_wrapper .gform_footer input.button, div:not(.form-header) .gform_wrapper .gform_footer input[type=submit], div:not(.form-header) .gform_wrapper .gform_page_footer input.button, div:not(.form-header) .gform_wrapper .gform_page_footer input[type=submit] {
+    font-size: 1.3em !important;
+    padding-top: 16px;
+  }
+  .form-header .form-content {
+    min-height: 515px;
+  }
+
+  .form-header .form-content .form-wrapper .gform_wrapper h3.gform_title {
+    font-size: 1.3em;
+  }
+
+  .form-header .form-content .form-wrapper .gform_wrapper .gform_footer {
+    margin-top: 30px;
+  }
+
+
+  //div:not(.form-header) .gform_wrapper .gform_footer:after {
+  //  margin-top: -6%;
+  //}
 
   .form-header .form-content .form-wrapper {
     right: 15px;

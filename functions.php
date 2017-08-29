@@ -46,7 +46,8 @@ function _scorch_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', '_scorch' ),
+        'primary' => esc_html__( 'Primary', '_scorch' ),
+        'main' => esc_html__( 'Main Nav', '_scorch' ),
 	) );
 
 	/*

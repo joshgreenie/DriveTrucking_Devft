@@ -25,6 +25,14 @@ div#flex {
     background-size: cover;
     background-position: center;
     z-index: 0;
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      background-position: 55% 50%;
+    }
+    @media screen and (max-width: $breakpoint-small-tablet) {
+      background-position: 0px 155px !important;
+      background-repeat: no-repeat;
+    }
   }
 }
 
@@ -44,6 +52,11 @@ a.blue-arrow {
   text-align: center;
   font-weight: bold;
 
+  @media screen and (max-width: $breakpoint-phone){
+    padding: 12px 0 0px 0;
+  }
+
+
   &:after {
     content: '';
     background-image: url(images/blue-arrow.svg);
@@ -58,6 +71,10 @@ a.blue-arrow {
     background-repeat: no-repeat;
     z-index: 0;
     min-height: 35px;
+
+    @media screen and (max-width: $breakpoint-phone){
+      padding-top: 22%;
+    }
   }
   &:before {
     content: '';
@@ -85,7 +102,7 @@ footer#colophon .site-info {
   }
 
   footer#colophon .site-info span:first-child {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 }
 /*--------------------------------------------------------------
@@ -156,7 +173,7 @@ Dont show over 980px - Menu Styles here
 }
 @media (max-width: $breakpoint-small-desktop) {
   .grid-container {
-    max-width:950px;
+    max-width:940px;
   }
 
 }

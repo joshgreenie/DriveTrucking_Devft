@@ -18,11 +18,55 @@
       bottom: 0;
       z-index: 1;
       transform: rotate(11deg) translate3d(0, 0, 0);
+
+      @media screen and (max-width: $breakpoint-large-desktop) {
+        width: calc(50% + 12px);
+        left: -5px;
+      }
+      @media screen and (max-width: $breakpoint-desktop) {
+        width: calc(50% + 9px);
+        left: -4px;
+      }
+      @media screen and (max-width: $breakpoint-small-desktop) {
+        width: calc(50% + 7px);
+        left: -3px;
+      }
+      @media screen and (max-width: $breakpoint-tablet) {
+        width: calc(50% + 5px);
+        left: -2px;
+      }
+      @media screen and (max-width: $breakpoint-small-tablet) {
+        width: calc(50% + 3px);
+        left: -1px;
+      }
+      @media screen and (max-width: $breakpoint-phone) {
+        width: calc(50% + 1px);
+        left: 0;
+      }
     }
     &:after {
       left: auto;
       right: -7px;
       transform: rotate(-11deg) translate3d(0, 0, 0);
+
+      @media screen and (max-width: $breakpoint-large-desktop) {
+        right: -5px;
+      }
+      @media screen and (max-width: $breakpoint-desktop) {
+        right: -4px;
+      }
+      @media screen and (max-width: $breakpoint-small-desktop) {
+        right: -3px;
+      }
+      @media screen and (max-width: $breakpoint-tablet) {
+        right: -2px;
+      }
+      @media screen and (max-width: $breakpoint-small-tablet) {
+        right: -1px;
+      }
+      @media screen and (max-width: $breakpoint-phone) {
+        right: 0;
+      }
     }
     .form-inner-footer {
       &:after,
@@ -36,12 +80,64 @@
         bottom: 22px;
         z-index: 1;
         transform: rotate(11deg) translate3d(0, 0, 0);
+
+        @media screen and (max-width: $breakpoint-large-desktop) {
+          width: calc(50% + -15px);
+          left: 19px;
+        }
+
+        @media screen and (max-width: $breakpoint-desktop) {
+          width: calc(50% + -15px);
+          left: 20px;
+        }
+        @media screen and (max-width: $breakpoint-small-desktop) {
+          width: calc(50% + -17px);
+          left: 21px;
+        }
+        @media screen and (max-width: $breakpoint-tablet) {
+          width: calc(50% + -19px);
+          left: 22px;
+        }
+        @media screen and (max-width: $breakpoint-small-tablet) {
+          width: calc(50% + -21px);
+          left: 23px;
+        }
+        @media screen and (max-width: $breakpoint-phone) {
+          width: calc(50% + -23px);
+          left: 24px;
+        }
       }
       &:after {
         left: auto;
         right: 18px;
         transform: rotate(-11deg) translate3d(0, 0, 0);
+
+        @media screen and (max-width: $breakpoint-large-desktop) {
+          right: 19px;
+        }
+        @media screen and (max-width: $breakpoint-desktop) {
+          right: 20px;
+        }
+        @media screen and (max-width: $breakpoint-small-desktop) {
+          right: 21px;
+        }
+        @media screen and (max-width: $breakpoint-tablet) {
+          right: 22px;
+        }
+        @media screen and (max-width: $breakpoint-small-tablet) {
+          right: 23px;
+        }
+        @media screen and (max-width: $breakpoint-phone) {
+          right: 24px;
+        }
       }
+    }
+  }
+
+  .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+
+    @media screen and (min-width: $breakpoint-desktop) {
+      padding: 13px 15px 13px !important;
     }
   }
 }
@@ -53,8 +149,6 @@
   border-right: 1px solid #8a8f92;
   border-left: 1px solid #8a8f92;
 
-
-
   .form-shelf-header {
     display: inline-block;
     width: 100%;
@@ -63,6 +157,23 @@
     background-position: 15% 50%;
     background-repeat: no-repeat;
     overflow: hidden;
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      background-size: cover;
+    }
+
+    @media screen and (max-width: $breakpoint-small-tablet) {
+      background-position: 0px 0px;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+
+    @media screen and (max-width: $breakpoint-phone) {
+    margin: 0 -1px;
+    width: calc(100% + 2px);
+    }
+
     .heading-wrap {
       width: 50%;
       display: inline-block;
@@ -71,6 +182,16 @@
       z-index: 1;
       color: #fff;
       padding: 75px 0;
+
+      @media screen and (max-width: $breakpoint-tablet) {
+        width: 73%;
+      }
+
+      @media screen and (max-width: $breakpoint-small-tablet) {
+        width: 100%;
+        margin-top: 36%;
+        background-color: #02233a;
+      }
 
       .heading {
         padding: 0;
@@ -99,8 +220,40 @@
 
   .form-content {
     padding: 20px 60px;
+
+    @media screen and (max-width: $breakpoint-phone) {
+      padding: 20px;
+    }
     .gform_wrapper {
       margin: 0;
+
+      .gform_footer input.button,
+      .gform_footer input[type=submit],
+      .gform_page_footer input.button,
+      .gform_page_footer input[type=submit] {
+        padding: 25px 150px;
+
+        @media screen and (max-width: $breakpoint-tablet) {
+          padding: 25px 150px;
+        }
+      }
+
+      .gform_footer {
+        margin-top: 40px;
+        margin-bottom: -40px;
+
+        @media screen and (max-width: $breakpoint-tablet) {
+          margin-top: 20px;
+          margin-bottom: -20px;
+        }
+        &:before {
+          //height: 50px !important;
+          @media screen and (max-width: $breakpoint-phone) {
+            //height: 35px !important;
+          }
+        }
+      }
+
       .top_label div.ginput_container {
         margin: 0;
       }
@@ -118,19 +271,37 @@
           }
         }
 
-
         h2.gsection_title {
           color: #A4A6A9;
           font-weight: 300 !important;
           border: none !important;
           padding: 0 !important;
           margin: 0 !important;
+          text-indent: 15px;
+          font-family: 'Droid Serif', sans-serif;
+
+          @media screen and (max-width: $breakpoint-phone) {
+            text-indent: 0;
+          }
         }
+
+      }
+
+      label.gfield_label {
+        color: #A4A6A9;
+        font-weight: 300 !important;
+        //text-indent: 15px;
+        font-family: 'Droid Serif', sans-serif;
       }
 
       .top_label li.gfield.gf_left_half,
       .top_label li.gfield.gf_right_half {
         padding-right: 20px;
+
+        @media screen and (max-width: $breakpoint-small-tablet) {
+          width: 100%;
+          padding: 0 !important;
+        }
       }
 
       .gform_body {
@@ -138,36 +309,9 @@
         width: calc(100% + 20px);
         max-width: calc(100% + 20px);
 
-      }
-      li.hidden_label input {
-        margin-top: 10px;
-      }
-
-      .inline_label {
-        color: #A4A6A9;
-        display: inline-flex !important;
-        padding: 20px 0 10px !important;
-        align-items: center;
-        > label {
-          font-weight: 300 !important;
-          text-indent: 16px;
-        }
-        ul.gfield_radio {
-          display: inline-flex;
-          margin: 0;
-          padding-left: 51px !important;
-          li {
-            margin-right: 30px !important;
-            margin-bottom: 0 !important;
-            label {
-              padding: 0 15px !important;
-              color: #A4A6A9;
-
-            }
-          }
-        }
-        .ginput_container.ginput_container_radio {
-          margin: 0 !important;
+        @media screen and (max-width: $breakpoint-small-tablet) {
+          width: 100%;
+          max-width: 100%;
         }
       }
     }
@@ -180,4 +324,33 @@
   border-color: #A4A6A9 !important;
   color: #A4A6A9 !important;
 }
+
+@media screen and (max-width: $breakpoint-phone) {
+  .form-shelf-wrapper {
+    margin: 0 0px;
+  }
+
+  .form-shelf-wrapper:before {
+    content: none !important;
+  }
+  .form-shelf-wrapper .form-shelf-header {
+    margin: 0 -1px;
+    width: calc(100% + 2px);
+  }
+  .form-shelf > .grid-container .form-section-footer:after, .form-shelf > .grid-container .form-section-footer :after, .form-shelf > .grid-container .form-section-footer:before, .form-shelf > .grid-container .form-section-footer :before {
+    content: none !important;
+  }
+
+  .form-shelf > .grid-container .form-section-footer {
+    padding: 0;
+  }
+  .gform_wrapper form {
+    margin: 0 !important;
+  }
+  header nav.main-navigation ul li a {
+    font-size: 1.6em;
+    line-height: 1;
+  }
+}
+
 
