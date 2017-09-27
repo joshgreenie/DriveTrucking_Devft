@@ -1,0 +1,10 @@
+.coulmn-wrapper {
+  clear: both;
+
+  @for $i from 1 to 10 {
+    .column-#{$i} .flex-content-wrapper {
+      @include j-column(1/$i);
+    }
+  }
+}
+

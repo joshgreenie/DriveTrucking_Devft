@@ -1,0 +1,25 @@
+.account-sidebar {
+  section {
+    border: 1px solid #03243b;
+    h2 {
+      color: #fff !important;
+      background-color: #03243b;
+      text-indent: 10px;
+      margin: 0 !important;
+    }
+    ul li {
+      margin: 0;
+      a {
+        padding: 10px 20px !important;
+        border-bottom: 2px groove rgba(203, 203, 203, 0.24);
+        &:hover {
+          background: #eee;
+          color: #134c7c;
+        }
+      }
+      &:last-child a {
+        border-bottom: none;
+      }
+    }
+  }
+}

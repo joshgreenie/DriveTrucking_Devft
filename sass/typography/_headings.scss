@@ -1,9 +1,32 @@
 h1, h2, h3, h4, h5, h6 {
-	clear: both;
+  clear: both;
 }
+
 .heading {
   margin: 20px 0;
   text-align: center;
   font-size: 2em;
   padding-bottom: 35px;
+
+  &.main {
+    font-family: 'Droid Serif', sans-serif;
+    font-style: italic;
+    text-align: left;
+    color: #03243b;
+    padding: 0;
+  }
+  &.big {
+      margin: 20px 0 15px 0;
+      font-family: 'Droid Serif', sans-serif;
+      color: #02233A;
+      font-size: 2.2rem;
+      font-style: italic;
+      padding: 0;
+  }
+  &.left {
+    text-align: left;
+  }
+  &.center {
+    text-align: center;
+  }
 }

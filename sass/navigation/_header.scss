@@ -403,13 +403,12 @@ header#masthead {
       img {
         //height: 50px;
 
-        padding: 20px 0px;
-        height: 136px;
+        padding: 10.5px 10px;
         background-color: #124b7b;
-        margin: 20px 20px 20px 0px;
+        margin: 20px 0px;
         @media screen and (max-width: $breakpoint-desktop) {
           padding: 0px;
-          height: 96px;
+          height: 70px;
         }
       }
     }
@@ -450,6 +449,11 @@ header#masthead #brand {
   display: flex;
   justify-content: space-between;
 
+  .grid-container {
+    display: table;
+  }
+
+
   .drive-trucking-login {
 
     width: auto;
@@ -466,8 +470,7 @@ header#masthead #brand {
     a {
       background-color: #134c7c;
       color: #fff;
-
-      padding: 52px 64px 53px 65px;
+      padding: 28.6px 75px;
       font-size: 1.3em;
       @media screen and (max-width: $breakpoint-desktop) {
         font-size: 1.13em;
@@ -478,7 +481,9 @@ header#masthead #brand {
 
   .drive-trucking-adspace {
 
-    padding: 44px 0px;
+    padding: 29px 0px;
+    line-height: 1;
+    min-height: 90px;
     width: calc(100% - 620px);
     margin: 20px 100px;
     @media screen and (max-width: $breakpoint-desktop) {

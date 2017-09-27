@@ -107,12 +107,12 @@
     @media screen and (max-width: $breakpoint-tablet) {
       z-index: initial;
     }
-
   }
+
 
   .primary-content {
     padding: 35px 0;
-    float: left;
+    //float: left;
     clear: none;
     margin-left: 0;
     margin-right: 1.5%;
@@ -185,11 +185,16 @@
     padding: 0 25px 25px 25px;
     position: absolute;
     right: 0;
+    top: 0;
     height: 100%;
     display: flex;
     clear: none;
     margin-left: 0;
     width: 520px;
+
+
+    border-left: 1px solid #8a8f92;
+    border-right: 1px solid #8a8f92;
 
     @media screen and (max-width: $breakpoint-desktop) {
       width: 420px;
@@ -233,21 +238,63 @@
     }
 
     .form-wrapper {
-      border-left: 1px solid #000;
-      border-right: 1px solid #000;
+      border-left: 1px solid #8a8f92;
+      border-right: 1px solid #8a8f92;
       padding: 20px 40px;
       position: absolute;
       height: calc(100% - 20px);
       right: 25px;
       left: 25px;
 
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
       @media screen and (max-width: $breakpoint-desktop) {
         padding: 20px 30px;
       }
+
+      p {
+        margin: 0;
+        .blue-arrow {
+          margin-bottom: -40px;
+          min-width: 100%;
+        }
+      }
+
+       h2 {
+        display: block;
+        margin: 50px 0 10px 0;
+        font-family: 'Droid Serif', sans-serif;
+        color: #02233A;
+        font-size: 1.8em;
+        font-style: italic;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+       h4 {
+        text-align: center;
+        margin: 30px 50px;
+        font-size: 1.4em;
+        text-transform: uppercase;
+        color: #02233A;
+        line-height: 1.2;
+      }
+
+       h5 {
+        font-size: 3em;
+        text-align: center;
+        font-family: 'Droid Serif', sans-serif;
+        font-style: italic;
+        color: #02233A;
+      }
+      
       &:after,
       &:before {
         content: '';
-        border-bottom: 1px solid #000;
+        border-bottom: 1px solid #8a8f92;
         width: calc(50% + 4px);
         position: absolute;
         left: -2px;
@@ -287,7 +334,7 @@
           margin-top: 57px;
 
           @media screen and (max-width: $breakpoint-large-desktop) {
-            margin-top: 37px;
+            margin-top: 45px;
           }
 
           @media screen and (max-width: $breakpoint-desktop) {
@@ -299,7 +346,12 @@
             z-index: 9;
           }
           @media screen and (max-width: $breakpoint-small-tablet) {
-            margin-top: 26px;
+            margin-top: 36px;
+          }
+
+          &:before {
+            height: 40px;
+
           }
         }
         button, input[type="button"], input[type="reset"], input[type="submit"] {
@@ -325,8 +377,10 @@
         }
 
         span.gform_description {
-          font-size: 1.2em;
+          font-size: 1.1em;
           margin: 15px 0 30px;
+          width: 100%;
+
           @media screen and (max-width: $breakpoint-desktop) {
             font-size: 14px;
             margin: 0;
@@ -456,7 +510,7 @@
   }
 
   .form-header .form-content .form-wrapper .gform_wrapper .gform_footer {
-    margin-top: 30px;
+    margin: 40px 0 0 0 !important;
   }
 
 

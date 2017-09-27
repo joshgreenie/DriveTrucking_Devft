@@ -1,6 +1,6 @@
 .grid-container{
-  @include j-center($max-width);
   @include clearfix;
+  @include j-center($max-width);
   width:100%;
 }
 //Set Column Grid classes

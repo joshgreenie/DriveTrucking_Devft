@@ -1,0 +1,40 @@
+.company-header {
+  max-width: 300px;
+  margin-right: 20px;
+  &.state {
+    max-width: 175px;
+    img {
+      max-height: 90px;
+      margin: 20px 0;
+    }
+  }
+}
+
+.top-header .drive-trucking-adspace.company-profile {
+  max-width: calc(100% - 780px);
+  margin: 20px;
+}
+
+div.company-profile {
+  .company-aside {
+    width: 31%;
+    float: left;
+    margin-right: 2%;
+  }
+  aside#company-header {
+    width: 100%;
+    float: none;
+
+    section#company-info {
+      margin-bottom: 80px;
+    }
+
+    #content section h3 {
+      /* color: #03243b; */
+      font-family: 'Droid Serif', sans-serif;
+      font-weight: normal;
+      text-shadow: 1px 1px #fff;
+      border-bottom: 1px solid rgba(112, 112, 113, 0.76);
+    }
+  }
+}

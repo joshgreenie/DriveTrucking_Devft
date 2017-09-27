@@ -1,0 +1,684 @@
+
+div#isotope-select {
+  margin: 0;
+}
+
+.tax-location {
+
+  .top-header .drive-trucking-adspace.company-profile {
+    max-width: calc(100% - 633px);
+    margin-right: 0;
+  }
+
+  .select2-container--default .select2-selection--single {
+    border-radius: 0;
+  }
+
+  .select2-container {
+    width: calc(33% - 5px) !important;
+    font-size: initial;
+    margin-right: 10px;
+  }
+
+  .split-chevron .isotope-filters {
+    font-size: 0;
+  }
+
+  .select2-container:last-child {
+    margin-right: 0 !important;
+  }
+
+  //.width-set {
+  //  @include j-column(1/3);
+  //}
+
+  #primary.content-area {
+    //@include j-column(2/3);
+
+  }
+
+  article.jobs.type-jobs {
+    width: 100%;
+    overflow: hidden;
+    border-top-right-radius: 3px;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+
+    &:before {
+      content: '';
+      border-top: 1px solid #eee;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      left: 0;
+      display: block;
+      transition: all .35s ease;
+    }
+    &:hover:before {
+      border-top: 1px solid #aeaeae;
+    }
+
+    header {
+      padding-right: 100px;
+      position: relative;
+      min-height: 50px;
+      h2.entry-title {
+        font-size: 1em;
+        font-weight: 300;
+        color: #333;
+        line-height: 1;
+        margin-top: 20px;
+        margin-bottom: 5px;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: -78px;
+        right: -35px;
+        border-radius: 2px;
+        transform: rotate(30deg);
+        border: 40px solid transparent;
+        border-bottom: 40px solid #F4911D;
+      }
+      &:before {
+        content: 'new';
+        position: absolute;
+        top: -17px;
+        right: 6px;
+        z-index: 1;
+        color: #fff;
+        font-size: 10px;
+        right: 4px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
+    .description p {
+      margin: 0;
+    }
+
+    .entry-content {
+      margin: 0;
+    }
+  }
+
+  .enticement-content {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    text-align: right;
+    min-width: 150px;
+    font-size: 14px;
+    line-height: 1;
+    span {
+      font-size: 12px;
+    }
+    h5 {
+      font-size: 14px;
+      font-weight: bold;
+      color: lightblue;
+    }
+  }
+
+  .entry-meta {
+    display: inline-block;
+    div {
+      display: inline-block;
+      font-size: 14px;
+      margin-right: 5px;
+      &:after {
+        content: '|';
+        margin-left: 5px;
+      }
+      &:last-child:after {
+        content: none;
+      }
+    }
+  }
+
+  nav#secondary-navigation {
+    background-color: #03243b;
+    color: #fff;
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      text-align: center;
+      li {
+        display: inline-block;
+        a {
+          display: block;
+          font-family: "Droid Sans", serif !important;
+          margin: 10px 10px 3px 10px;
+          text-decoration: none;
+          float: left;
+          position: relative;
+          height: auto;
+          line-height: 1;
+          padding: 7px 25px 5px;
+          border-radius: 2px;
+          color: #fff;
+          font-weight: 300;
+          font-size: 1.13rem;
+          border: 2px solid #fff;
+          transition: all .2s ease;
+          &:hover {
+            background: #fff;
+            color: #03243b;
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+
+  .rslides .image {
+    font-size: 0;
+  }
+
+  //#isotope-container article.jobs.type-jobs {
+  //  display: none;
+  //}
+  //
+  //#isotope-container article.jobs.type-jobs.initialized {
+  //  display: block;
+  //}
+
+  div#isotope-container {
+    //padding-bottom: 100px;
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      min-height: 100px;
+    }
+
+     h2.heading.main {
+      margin: 0;
+      opacity: 0;
+      transition: all .35s ease;
+
+       @media screen and (max-width: $breakpoint-tablet) {
+         text-align: center;
+       }
+      &.active {
+        opacity:1;
+      }
+    }
+
+    .pagination {
+      position: absolute;
+      bottom: 10px;
+    }
+  }
+
+  #primary.content-area {
+    width: calc(100% - 325px);
+    float: left;
+
+    @media screen and (max-width: $breakpoint-tablet) {
+    width: 100%;
+    order: 1;
+    }
+  }
+  @media screen and (max-width: $breakpoint-tablet) {
+    .main-content-tax .grid-container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  aside#secondary {
+
+    width: 325px;
+    margin: 0;
+
+    h2.heading.main {
+      margin: 0 0 20px 0;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    .post-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-size: 12px;
+    }
+
+    .post-looped {
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+
+    h3.post-title {
+      font-size: 16px;
+      font-weight: 300;
+    }
+  }
+
+  aside#secondary {
+    padding-top: 20px;
+  }
+
+  div#primary {
+    padding-top: 20px;
+  }
+
+  [class*=isotope-pager] {
+    position: absolute;
+    top: 0px;
+    display: inline-block;
+
+    @media screen and (max-width: $breakpoint-small-tablet) {
+
+        width: 100%;
+      }
+
+      &[class*=bottom] {
+          top: auto;
+          bottom: 20px;
+        }
+      a.pager {
+          padding: 5px 10px;
+          margin-right: 5px;
+          background: #fff;
+          border: 1px solid #dcdcdc;
+          color: #333;
+          border-radius: 3px;
+        display: inline-block;
+        @media screen and (max-width: $breakpoint-small-tablet) {
+            display: inline-block;
+            margin-bottom: 10px;
+            width: calc((100% / 10) - (45px / 10));
+            text-align: center;
+            &:nth-child(10n) {margin-right: 0 !important;}
+        }
+
+      &.active {
+        background-color: #02233a;
+        color: #fff;
+        border-color: #02233a;
+      }
+
+      &:hover {
+        border-color: #02233a;
+        color: #02233a;
+      }
+
+      &.active:hover {
+        border-color: #fff;
+        color: #fff;
+      }
+
+      &:active,
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  main#main {
+    position: relative;
+    padding-top: 45px;
+    padding-bottom: 55px;
+      transition: .35s ease;
+
+
+    @media screen and (max-width: $breakpoint-small-tablet) {
+       padding: 140px 0;
+    }
+  }
+
+  [class*=isotope-pager] a:focus,
+  [class*=isotope-pager] a:active {
+    background: #eee;
+  }
+
+  aside#secondary {
+    right: calc(50% - 840px);
+    @media screen and (max-width: $breakpoint-large-desktop) {
+      right: calc(50% - 720px);
+
+    }
+    @media screen and (max-width: $breakpoint-desktop) {
+      right: calc(50% - 575px);
+
+    }
+    @media screen and (max-width: $breakpoint-small-desktop) {
+      right: calc(50% - 470px);
+
+    }
+    @media screen and (max-width: $breakpoint-tablet) {
+      position: static;
+      width: 100%;
+      order: 3;
+      text-align: center;
+      img {
+        clear: both;
+        display: block;
+        margin: 10px auto;
+      }
+      h2 {
+        text-align: center;
+      }
+    }
+  }
+
+  .grid-container {
+    position: relative;
+  }
+
+  aside#secondary .articles-sidebar {
+    //padding-bottom: 100px;
+  }
+
+  aside#secondary.end-sidebar {
+    transform: translateY(calc(-100% + 4px));
+  }
+
+  aside#secondary.fixed-sidebar {
+    margin-top: -2px;
+  }
+
+  aside#secondary {
+    transition: none;
+
+  }
+
+  .articles-sidebar {
+    //padding-bottom: 100px;
+  }
+
+  select.custom-select.hidden {
+    display: none;
+
+    + span.select2.select2-container {
+      display: none;
+    }
+  }
+  .select2-container:nth-child(3n + 1) {
+    margin-right: 0 !important;
+    margin: 10px 0;
+  }
+
+
+  .split-chevron {
+
+    @media screen and (max-width: $breakpoint-small-desktop) {
+      background-position: right center;
+      &:after {
+        background-position: calc(50% - 200px) 50%;
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      background: center;
+      &:after {
+        background: rgba(2, 35, 58, 0.9);
+      }
+    }
+
+    [class*="split-content"] {
+      padding-left: 0;
+      padding-right: 0;
+      @media screen and (max-width: $breakpoint-small-desktop) {
+        width: calc(50% + 200px);
+      }
+      @media screen and (max-width: $breakpoint-tablet) {
+        margin: 0;
+        width: 100%;
+        padding: 30px 0 50px;
+      }
+    }
+    h2.heading.main {
+      text-align: left;
+      margin-bottom: 0;
+    }
+    h2.heading.big.left {
+      text-align: left;
+      color: #fff;
+      margin: 0;
+    }
+    .isotope-filters {
+      //border: 1px solid #fff;
+      //padding: 10px 20px;
+      //padding: 30px 0;
+      border: 1px solid #fff;
+      padding: 10px 20px;
+      h2.heading.main {
+        color: #fff;
+        font-size: 24px;
+        margin-bottom: 0;
+        margin-top: 0;
+        text-align: left;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+div#state-banner {
+
+  .flex-wrapper {
+    display: flex;
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+    }
+  }
+
+  .banner-wrap {
+    display: flex !important;
+    align-items: stretch;
+    position: relative;
+    right: 0;
+    @media screen and (max-width: $breakpoint-tablet) {
+      margin-bottom: calc(10% + 0px);
+      border-top: 25px solid #02233a;
+    }
+
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 100%;
+      border: 240px solid transparent;
+      border-top: 47px solid #fff;
+      z-index: 1;
+
+
+      @media screen and (max-width: $breakpoint-desktop) {
+        border: 225px solid transparent;
+        border-top: 44px solid #fff;
+      }
+
+      @media screen and (max-width: $breakpoint-small-desktop) {
+        border: 175px solid transparent;
+        border-top: 34px solid #fff;
+      }
+      @media screen and (max-width: $breakpoint-tablet) {
+        content: none !important;
+      }
+    }
+  }
+
+  .featured-post-wrapper {
+    width: calc(100% - 480px);
+    float: none;
+    display: inline-block;
+    padding: 20px 1.5em 20px 0;
+    min-height: 450px;
+
+    @media screen and (max-width: $breakpoint-desktop) {
+      width: calc(100% - 450px);
+    }
+
+    @media screen and (max-width: $breakpoint-small-desktop) {
+      width: calc(100% - 350px);
+    }
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      width: 100%;
+      padding-right: 0;
+    }
+    article.jobs.type-jobs {
+      position: relative;
+    }
+  }
+}
+
+
+h2.heading.big.left {
+  text-align: left;
+  margin: 0;
+}
+
+div#isotope-select {
+  &:after {
+    background-size: 4000px;
+    background-position: 50%;
+  }
+
+  .heading.left {
+    display: inline-block;
+    margin: 10px 0 5px;
+    //width: 50%;
+  }
+
+  .state-heading {
+    flex-basis: 50%;
+    margin-left: 19%;
+    max-width: 440px;
+
+    @media screen and (max-width: $breakpoint-large-desktop) {
+      margin-left: 14%;
+    }
+  }
+}
+
+.iframe-state {
+  text-align: center;
+  padding: 10px 0;
+}
+
+
+[class*=isotope-pager].no-results {
+  opacity: 0 !important;
+  display: none !important;
+}
+
+[class*=isotope-pager].no-results ~ [class*=isotope-pager-bottom] {
+  opacity: 0;
+}
+
+
+
+
+
+ul.custom-check {
+  font-size: initial;
+  list-style-type: none;
+  padding: 5px 0;
+  margin: 0;
+  clear: both;
+
+  h4 {
+    font-family: 'Droid Serif', sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1;
+    font-weight: 400;
+    margin-top: 5px;
+  }
+  li {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+    input {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      z-index: 2;
+      cursor: pointer;
+      &:checked + label:after {
+        opacity: 1;
+      }
+    }
+
+    label{
+
+      position: relative;
+      display: inline-block;
+      padding-left: 15px;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 10px;
+        border: 1px solid #fff;
+        background: #03243b;
+        position: absolute;
+        left: 0;
+        top: 7px;
+        bottom: 7px;
+        margin: auto;
+        opacity: 0;
+        transition: all .35s ease;
+      }
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        background: #fff;
+        position: absolute;
+        left: 0;
+        top: 7px;
+        bottom: 7px;
+        margin: auto;
+      }
+    }
+  }
+}
+
+section#brand {
+  align-items: center;
+}
+.company-header.state img[src="http://www.drivetrucking.devft.com/wp-content/uploads/2017/09/kentucky-trucking-logo.jpg"] {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 1500px){
+
+  .top-header .drive-trucking-adspace {
+    min-height: 70px;
+    padding: 18px 0px;
+    width: calc(100% - 440px);
+    max-width: calc(100% - 520px) !important;
+  }
+
+  .top-header .drive-trucking-login a {
+    font-size: 1.13em;
+    padding: 22px 48px;
+    height: 70px;
+  }
+
+  .company-header.state img[src="http://www.drivetrucking.devft.com/wp-content/uploads/2017/09/kentucky-trucking-logo.jpg"] {
+    max-height: 70px;
+  }
+}
+
