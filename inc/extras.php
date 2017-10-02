@@ -282,5 +282,22 @@ $states = array(
 	return $return;
 }
 
+function set_posts_per_page_for_locations( $query ) {
+    if ( !is_admin() && $query->is_main_query() && is_tax( 'location' ) ) {
+        $query->set( 'posts_per_page', '-1' );
+    }
+}
+add_action( 'pre_get_posts', 'set_posts_per_page_for_locations' );
+
+
+function admin_style() {
+    wp_enqueue_style('admin-styles', get_template_directory_uri().'/admin.css');
+}
+add_action('admin_enqueue_scripts', 'admin_style');
+
+// Gravity form bits
+
 
 add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+
+add_filter( 'gform_enable_password_field', '__return_true' );

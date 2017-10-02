@@ -14,7 +14,7 @@
 <?php
 
 $add_base_flexible_fields = get_field('add_base_flexible_fields');
-if(!$add_base_flexible_fields):
+if(!$add_base_flexible_fields || !is_tax('location')):
 ?>
     </div><!-- #content -->
     <?php endif;?>

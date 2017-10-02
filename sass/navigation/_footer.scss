@@ -1,7 +1,9 @@
 footer#colophon{
   background: $color_dark_blue;
   padding: 0 0 15px;
-  color: $color_light_blue;
+color: $color_light_blue;
+  clear: both;
+
   a{
     color: $color_light_blue;
     text-decoration: none;

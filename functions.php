@@ -46,7 +46,8 @@ function _scorch_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', '_scorch' ),
+        'primary' => esc_html__( 'Primary', '_scorch' ),
+        'main' => esc_html__( 'Main Nav', '_scorch' ),
 	) );
 
 	/*
@@ -100,15 +101,24 @@ add_action( 'after_setup_theme', '_scorch_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function _scorch_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', '_scorch' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+    register_sidebar( array(
+        'name'          => esc_html__( 'Sidebar', '_scorch' ),
+        'id'            => 'sidebar-1',
+        'description'   => '',
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+    register_sidebar( array(
+        'name'          => esc_html__( 'Account', '_scorch' ),
+        'id'            => 'account',
+        'description'   => '',
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
 	register_sidebar( array(
 		'name'          => __( 'Footer One', '_scorch' ),
 		'id'            => 'footer-1',
@@ -180,7 +190,13 @@ function _scorch_scripts() {
 
 	wp_enqueue_script( 'select2-full-js', get_stylesheet_directory_uri() . '/js/select2.full.min.js', array('jquery'), '4.0.2', false );
 
-	wp_enqueue_script( '_scorch-js', get_stylesheet_directory_uri() . '/js/_scorch.js', array('jquery'), '1.0.0', false );
+    wp_enqueue_script( 'owl-js', get_stylesheet_directory_uri() . '/js/owl.carousel.js', array('jquery'), '1.0.0', false );
+
+    wp_enqueue_style( 'owl-css', get_stylesheet_directory_uri() . '/inc/owl.carousel.css', false, false, false );
+
+    wp_enqueue_script( '_scorch-js', get_stylesheet_directory_uri() . '/js/_scorch.js', array('jquery'), '1.0.0', false );
+
+    wp_enqueue_script( 'isotope-js', get_stylesheet_directory_uri() . '/js/isotope.pkgd.min.js', array('jquery'), '1.0.0', false );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -243,3 +259,22 @@ require get_template_directory() . '/inc/Mobile_Detect.php';
  * Load Advanced Custom fields file.
  */
 require get_template_directory() . '/inc/gravity-submit.php';
+
+/**
+ * Load Advanced Custom fields file.
+ */
+require get_template_directory() . '/inc/acf-taxonomy-depth-rule.php';
+
+//
+//add_action('init','change_author_permalinks');
+//function change_author_permalinks()
+//{
+//    global $wp_rewrite;
+//    $wp_rewrite->author_base = ''; // Change 'member' to be the base URL you wish to use
+//    $wp_rewrite->author_structure = '/' . $wp_rewrite->author_base. '/%author%';
+//}
+
+function wpdocs_custom_excerpt_length( $length ) {
+    return 26;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );

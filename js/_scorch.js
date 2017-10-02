@@ -19,6 +19,296 @@
 
 
     $(document).ready(function () {
+
+        var targets = $('#isotope-select select');
+
+        targets.each(function () {
+            const $thisID = $(this).attr('name');
+            const $thisOption = $(this).find('option');
+            const $thisOptionValue = $(this).find('option').attr('value');
+            const $thisOptionFirst = $(this).find('option:first-child');
+
+            $(this).attr('data-filter-group', '.' + $thisID );
+
+            $thisOption.each(function () {
+                const $optValue = $(this).attr('value');
+                $(this).attr('data-filter-value', '.' + $thisID + '-' + $optValue);
+            });
+            $thisOptionFirst.attr('data-filter-value', '');
+        });
+
+        var itemSelector = '.jobs.type-jobs',
+            filters = {};
+
+        var $container = $('#isotope-container').isotope({
+            itemSelector: itemSelector,
+
+        });
+
+        //Ascending order
+        var responsiveIsotope = [
+            [500, 4],
+            [768, 8]
+        ];
+
+        var itemsPerPageDefault = 10;
+        var $selects = $('#isotope-select select');
+        var $checkboxes = $('#isotope-select .custom-check input');
+        // var $checkboxWrapper = $('#isotope-select .custom-check');
+        var itemsPerPage = defineItemsPerPage();
+        var currentNumberPages = 1;
+        var currentPage = 1;
+        var currentFilter = '*';
+        var filterAtribute = 'data-filter';
+        var pageAtribute = 'data-page';
+        var pagerClass = 'isotope-pager';
+        var pagerClassBottom = 'isotope-pager-bottom';
+        var filterAtributeGroup = 'data-filter-group';
+
+
+
+        function changeFilter(selector) {
+            $container.isotope({
+                filter: selector
+            });
+        }
+
+        function goToPage(n) {
+            currentPage = n;
+            var exclusives = [];
+            var inclusives = [];
+            $selects.each( function( ) {
+                var $this = $(this);
+                var selectValue = $this.find(':selected').attr('data-filter-value');
+                exclusives.push( selectValue )
+            });
+            $checkboxes.each( function( i, elem ) {
+                var checkValue = $(this).attr('data-filter-value');
+                // if checkbox, use value if checked
+                if ( elem.checked ) {
+                    inclusives.push( checkValue );
+                }
+            });
+            exclusives = exclusives.join('');
+            exclusives += '['+pageAtribute+'="'+currentPage+'"]';
+            var currentFilter;
+            if ( inclusives.length ) {
+                currentFilter = $.map( inclusives, function( value ) {
+                    return value + exclusives;
+                });
+                currentFilter = currentFilter.join(', ');
+            } else {
+                currentFilter = exclusives;
+            }
+            var selector = itemSelector;
+            selector += ( currentFilter != '*' ) ? currentFilter : '';
+            // console.log(selector);
+            changeFilter(selector);
+        }
+
+
+
+
+        function defineItemsPerPage() {
+            var pages = itemsPerPageDefault;
+            for( var i = 0; i < responsiveIsotope.length; i++ ) {
+                if( $(window).width() <= responsiveIsotope[i][0] ) {
+                    pages = responsiveIsotope[i][1];
+                    break;
+                }
+            }
+            return pages;
+        }
+
+        function setPagination() {
+            var SettingsPagesOnItems = function(){
+
+                var itemsLength = $container.children(itemSelector).length;
+                var pages = Math.ceil(itemsLength / itemsPerPage);
+                var item = 1;
+                var page = 1;
+                var exclusives = [];
+                var inclusives = [];
+
+                $selects.each( function( ) {
+                    var $this = $(this);
+                    var selectValue = $this.find(':selected').attr('data-filter-value');
+                    exclusives.push( selectValue )
+                });
+
+                $checkboxes.each( function( i, elem ) {
+                    var $value = $(this).attr('data-filter-value');
+                    // if checkbox, use value if checked
+                    if ( elem.checked ) {
+                        inclusives.push( $value );
+                    }
+                });
+
+                exclusives = exclusives.join('');
+
+                var currentFilter;
+                if ( inclusives.length ) {
+                    currentFilter = $.map( inclusives, function( value ) {
+                        return value + exclusives;
+                    });
+                    currentFilter = currentFilter.join(', ');
+                } else {
+                    currentFilter = exclusives;
+                }
+
+                var selector = itemSelector;
+                selector += ( currentFilter != '*' ) ? currentFilter : '';
+                $container.children(selector).each(function(){
+                    if( item > itemsPerPage ) {
+                        page++;
+                        item = 1;
+                    }
+                    $(this).attr(pageAtribute, page);
+                    item++;
+                });
+
+                if($container.children(selector).length == 0){
+                    $container.find('h2.heading.main').addClass('active');
+                    $('[class*=isotope-pager]').addClass('no-results');
+                } else {
+                    $container.find('h2.heading.main').removeClass('active');
+                    $('[class*=isotope-pager][class*=no-results]').removeClass('no-results');
+                }
+
+                currentNumberPages = page;
+            }();
+
+            var CreatePagers = function() {
+                var $isotopePager = ( $('.'+pagerClass).length == 0 ) ? $('<div class="'+pagerClass+'"></div>') : $('.'+pagerClass);
+                var $isotopePagerBottom = ( $('.'+pagerClassBottom).length == 0 ) ? $('<div class="'+pagerClassBottom+'"></div>') : $('.'+pagerClassBottom);
+                $isotopePager.html('');
+                $isotopePagerBottom.html('');
+                for( var i = 0; i < currentNumberPages; i++ ) {
+                    var $pager = $('<a href="javascript:void(0);" class="pager" '+pageAtribute+'="'+(i+1)+'"></a>');
+                    $pager.html(i+1);
+                    $pager.click(function(){
+                        var page = $(this).eq(0).attr(pageAtribute);
+                        var data = $(this).data('page');
+                        // $(this).addClass('page-'+data);
+                        $('[class*=isotope-pager] a.active').removeClass('active');
+                        $('[class*=isotope-pager] a[data-page="'+data+'"]').addClass('active');
+                        $(this).addClass('active');
+                        goToPage(page);
+                    });
+                    $pager.appendTo($isotopePager);
+                }
+                for( var j = 0; j < currentNumberPages; j++ ) {
+                    var $pager2 = $('<a href="javascript:void(0);" class="pager" '+pageAtribute+'="'+(j+1)+'"></a>');
+                    $pager2.html(j+1);
+                    $pager2.click(function(){
+                        var page2 = $(this).eq(0).attr(pageAtribute);
+                        var data2 = $(this).data('page');
+                        // $(this).addClass('page-'+data);
+                        $('[class*=isotope-pager] a.active').removeClass('active');
+                        $('[class*=isotope-pager] a[data-page="'+data2+'"]').addClass('active');
+                        $(this).addClass('active');
+                        goToPage(page2);
+                    });
+                    $pager2.appendTo($isotopePagerBottom);
+                }
+                $container.before($isotopePager);
+                $container.after($isotopePagerBottom);
+                var $main = $('.tax-location main#main');
+                var pagerHeight = $isotopePager.outerHeight() + 10;
+                var pagerBottomHeight = $isotopePagerBottom.outerHeight() + 10;
+                $main.css('padding-top', pagerHeight);
+                $main.css('padding-bottom', pagerBottomHeight);
+                $('[class*=isotope-pager] a:first-child').addClass('active');
+            }();
+        }
+        setPagination();
+        goToPage(1);
+
+        $selects.add( $checkboxes ).change( function() {
+
+            var exclusives = [];
+            var inclusives = [];
+
+            $selects.each( function( ) {
+                var $this = $(this);
+                var selectValue = $this.find(':selected').attr('data-filter-value');
+                exclusives.push( selectValue )
+            });
+
+            $checkboxes.each( function( i, elem ) {
+                var checkValue = $(this).attr('data-filter-value');
+                // if checkbox, use value if checked
+                if ( elem.checked ) {
+                    inclusives.push( checkValue );
+                }
+            });
+
+            exclusives = exclusives.join('');
+
+            var currentFilter;
+            if ( inclusives.length ) {
+                currentFilter = $.map( inclusives, function( value ) {
+                    return value + exclusives;
+                });
+                currentFilter = currentFilter.join(', ');
+            } else {
+                currentFilter = exclusives;
+            }
+
+            setPagination();
+            goToPage(1);
+        });
+
+
+        $(window).resize(function(){
+            itemsPerPage = defineItemsPerPage();
+            setPagination();
+            goToPage(1);
+        });
+
+
+
+        ///////////////////////////////////////////
+        //////////     Tables      ////////////////
+        ///////////////////////////////////////////
+
+        $('.table-wrapper.closed .table-content').hide();
+        $('.table-wrapper h3.table-title').on("click", function () {
+            $(this).toggleClass('active');
+            $(this).next('.table-content').slideToggle();
+        });
+
+
+
+        $('.owl-carousel-content').owlCarousel({
+            dots: true,
+            autoplay: false,
+            items: 4,
+            nav: true,
+            navText: ["<span class='arrow left'></span>", "<span class='arrow right'></span>"],
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                500: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+                980: {
+                    items: 3,
+                },
+                1200: {
+                    items: 4,
+                },
+            }
+        });
+    });
+
+
+
+    $(document).ready(function () {
         $('#hamburgler').click(function () {
             $(this).toggleClass('open');
             $('#site-navigation').toggleClass('close');
@@ -124,9 +414,12 @@
             $('.holder').center();
         });
 
-        $("#select-location, #select-driver, #select-freight").select2({
+        $("#select-location, #select-driver, #select-freight, #select-run").select2({
             placeholder: 'Select an option'
+        });
 
+        $(".custom-select.select2").select2({
+            placeholder: 'Select an option'
         });
 
         $("#submit-job-sort").click(function (event) {

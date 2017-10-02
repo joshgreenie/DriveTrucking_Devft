@@ -19,11 +19,22 @@
     z-index: 1;
   }
   .page.heading {
-    padding: 25px 0;
     color: #03243b;
     font-style: italic;
-    font-family: 'Droid Serif', times new roman;
+    font-family: 'Droid Serif', sans-serif;
     font-weight: bolder;
+    margin: 0;
     font-size: 2.4em;
+    padding: 50px 0;
+
+    @media screen and (max-width: $breakpoint-small-desktop) {
+    padding: 25px 0;
+    font-size: 2em;
+    }
+    @media screen and (max-width: $breakpoint-small-tablet) {
+      font-size: 1.5em;
+      margin: 0;
+      line-height: 1.2;
+    }
   }
 }
