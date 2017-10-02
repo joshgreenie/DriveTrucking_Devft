@@ -265,24 +265,25 @@ $company_name                   = get_the_title();
             </ul>
         </section>
     <?php endif; wp_reset_postdata();?>
-    <section class="advert">
-        <!-- /104636738/top_square_ad -->
-        <div id='div-gpt-ad-1463521288188-8'>
-            <script type='text/javascript'>
-                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1463521288188-8'); });
-            </script>
-        </div>
-        <!-- /104636738/button_ad_1 -->
-        <div id='div-gpt-ad-1463521288188-0' style='height:125px; width:125px; display: inline-flex;'>
-            <script type='text/javascript'>
-                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1463521288188-0'); });
-            </script>
-        </div>
-        <!-- /104636738/Button_ad_2 -->
-        <div id='div-gpt-ad-1463521288188-1' style='height:125px; width:125px; display: inline-flex;'>
-            <script type='text/javascript'>
-                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1463521288188-1'); });
-            </script>
-        </div>
-    </section>
+    <!-- commented out advert -->
+<!--    <section class="advert">-->
+<!--        <!-- /104636738/top_square_ad -->
+<!--        <div id='div-gpt-ad-1463521288188-8'>-->
+<!--            <script type='text/javascript'>-->
+<!--                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1463521288188-8'); });-->
+<!--            </script>-->
+<!--        </div>-->
+<!--        <!-- /104636738/button_ad_1 -->
+<!--        <div id='div-gpt-ad-1463521288188-0' style='height:125px; width:125px; display: inline-flex;'>-->
+<!--            <script type='text/javascript'>-->
+<!--                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1463521288188-0'); });-->
+<!--            </script>-->
+<!--        </div>-->
+<!--        <!-- /104636738/Button_ad_2 -->
+<!--        <div id='div-gpt-ad-1463521288188-1' style='height:125px; width:125px; display: inline-flex;'>-->
+<!--            <script type='text/javascript'>-->
+<!--                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1463521288188-1'); });-->
+<!--            </script>-->
+<!--        </div>-->
+<!--    </section>-->
 </aside><!-- #secondary -->

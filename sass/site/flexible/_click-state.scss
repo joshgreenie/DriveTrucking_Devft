@@ -1,0 +1,551 @@
+.map-wrapper {
+  width: calc(100% - 650px);
+  float: left;
+  padding: 50px 0;
+
+  #vmap {
+    min-height: 500px;
+
+    @media screen and (max-width: $breakpoint-small-tablet) {
+      min-height: 300px;
+      height: auto;
+    }
+    @media screen and (max-width: $breakpoint-phone) {
+      svg {
+        max-height: 400px;
+      }
+    }
+
+    svg {
+      max-width: 100%;
+    }
+  }
+
+
+  @media screen and (max-width: $breakpoint-desktop) {
+    width: calc(100% - 525px);
+  }
+
+
+  @media screen and (max-width: $breakpoint-small-desktop) {
+    width: 100%;
+    position: relative;
+    padding-bottom: 75px;
+
+    &:after {
+      content: '';
+      height: 50px;
+      width: 300%;
+      background: #02233a;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: -150%;
+      left: -150%;
+      margin: auto;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    width: 100%;
+  }
+
+}
+
+.job-flag-feed {
+  width: 650px;
+  float: left;
+  padding: 50px 0;
+
+  @media screen and (max-width: $breakpoint-desktop) {
+    width: 525px;
+  }
+
+  @media screen and (max-width: $breakpoint-small-desktop) {
+    width: 400px;
+  }
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    width: 100%;
+  }
+
+}
+
+.click-a-state {
+  display: inline-block;
+  width: 100%;
+  @media screen and (max-width: $breakpoint-small-desktop) {
+    overflow: hidden;
+  }
+
+  h2.shelf-header {
+    text-align: center;
+    color: #134c7c;
+    max-width: 230px;
+    line-height: 1.2;
+    margin: 0 auto;
+    font-size: 2em;
+  }
+}
+
+div[class*=flag-border] {
+  padding: 0 25px 25px 25px;
+  border-left: 1px solid #8a8f92;
+  border-right: 1px solid #8a8f92;
+  position: relative;
+
+  margin-bottom: 100px;
+
+  //@media screen and (max-width: $breakpoint-desktop) {
+  //margin-bottom: 55px;
+  //}
+
+  @media screen and (max-width: $breakpoint-small-desktop) {
+    width: 100%;
+    margin-bottom: 150px;
+  }
+
+  &:after,
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    border-bottom: 1px solid #8a8f92;
+    z-index: 1;
+    -webkit-transform: rotate(11deg) translate3d(0, 0, 0);
+    transform: rotate(11deg) translate3d(0, 0, 0);
+
+    left: -3px;
+    bottom: -31px;
+    width: calc(50% + 6px);
+
+    @media screen and (max-width: $breakpoint-desktop) {
+    width: calc(50% + 4px);
+    left: -2px;
+    bottom: -26px;
+
+    }
+    @media screen and (max-width: $breakpoint-small-desktop) {
+      bottom: -46px;
+      width: calc(50% + 8px);
+      left: -4px;
+    }
+    @media screen and (max-width: $breakpoint-tablet) {
+      bottom: -37px;
+    }
+
+    @media screen and (max-width: $breakpoint-small-tablet) {
+      bottom: -23px;
+      width: calc(50% + 6px);
+      left: -3px;
+    }
+
+    @media screen and (max-width: $breakpoint-phone) {
+      bottom: -15px;
+      width: calc(50% + 3px);
+      left: -2px;
+    }
+  }
+  &:before {
+    left: auto;
+    transform: rotate(-11deg) translate3d(0, 0, 0);
+    right: -3px;
+
+    @media screen and (max-width: $breakpoint-desktop) {
+    right: -2px;
+    }
+    @media screen and (max-width: $breakpoint-small-desktop) {
+      left: auto !important;
+      right: -4px;
+    }
+    @media screen and (max-width: $breakpoint-small-tablet) {
+      right: -3px;
+    }
+    @media screen and (max-width: $breakpoint-phone) {
+      right: -2px;
+    }
+  }
+
+
+  .flag-wrapper {
+    border-left: 1px solid #8a8f92;
+    border-right: 1px solid #8a8f92;
+    padding: 20px 40px;
+
+
+    .flag-inner-wrapper {
+      margin-bottom: -45px;
+      @media screen and (max-width: $breakpoint-small-desktop) {
+      margin-bottom: -75px;
+      }
+
+      @media screen and (max-width: $breakpoint-tablet) {
+        margin-bottom: -60px;
+      }
+      @media screen and (max-width: $breakpoint-small-tablet) {
+        margin-bottom: -30px;
+      }
+      @media screen and (max-width: $breakpoint-phone) {
+        margin-bottom: -15px;
+      }
+    }
+
+    a.blue-arrow {
+
+      margin: 20px auto 0;
+      @media screen and (max-width: $breakpoint-tablet) {
+        margin-top: 40px;
+      }
+      @media screen and (max-width: $breakpoint-phone) {
+        margin-top: 20px;
+        padding-top: 10px;
+
+        &:before {
+          height: 30px;
+        }
+
+        &:after {
+          margin-top: -20px;
+        }
+      }
+    }
+
+    &:after,
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: calc(50% - 20.4px);
+      left: 0;
+      border-bottom: 1px solid #8a8f92;
+
+      left: 23px;
+      z-index: 1;
+      -webkit-transform: rotate(11deg) translate3d(0, 0, 0);
+      transform: rotate(11deg) translate3d(0, 0, 0);
+
+      bottom: -4px;
+      @media screen and (max-width: $breakpoint-desktop) {
+        bottom: 1px;
+      }
+      @media screen and (max-width: $breakpoint-small-desktop) {
+        left: 22px;
+        width: calc(50% - 18.4px);
+        bottom: -18px;
+      }
+      @media screen and (max-width: $breakpoint-tablet) {
+        bottom: -10px;
+      }
+
+      @media screen and (max-width: $breakpoint-small-tablet) {
+        bottom: 5px;
+        left: 24px;
+        width: calc(50% - 22.4px);
+      }
+      @media screen and (max-width: $breakpoint-phone) {
+        bottom: 13px;
+        width: calc(50% - 23px);
+        left: 24px;
+      }
+    }
+    &:before {
+      left: auto;
+      transform: rotate(-11deg) translate3d(0, 0, 0);
+
+      right: 23px;
+      @media screen and (max-width: $breakpoint-desktop) {
+
+      }
+      @media screen and (max-width: $breakpoint-small-desktop) {
+        right: 22px;
+      }
+      @media screen and (max-width: $breakpoint-small-tablet) {
+        right: 24px;
+      }
+      @media screen and (max-width: $breakpoint-phone) {
+        right: 24px;
+        left: auto;
+      }
+    }
+
+    h2.heading {
+      display: block;
+      margin: 20px 0 15px 0;
+      font-family: 'Droid Serif', sans-serif;
+      color: #02233A;
+      font-size: 2.2rem;
+      font-style: italic;
+      padding: 0;
+
+      @media screen and (max-width: $breakpoint-phone) {
+        line-height: 1.2;
+        font-size: 1.6em;
+      }
+    }
+
+    .post-content {
+      padding: 0 0 10px;
+      position: relative;
+      border-top-right-radius: 5px;
+      overflow: hidden;
+
+      @media screen and (max-width: $breakpoint-phone) {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid #dedede;
+      padding: 0px 0 20px 0;
+      }
+
+      &.new {
+        &:after {
+          content: '';
+          position: absolute;
+          display: block;
+          //border: 45px solid transparent;
+          //border-bottom: 45px solid #F4911D;
+          //transform: rotate(45deg);
+          top: -46px;
+          right: -46px;
+          border-radius: 2px;
+          transform: rotate(40deg);
+          border: 40px solid transparent;
+          border-bottom: 40px solid #F4911D;
+        }
+        &:before {
+          content: 'new';
+          position: absolute;
+          top: 3px;
+          right: 6px;
+          z-index: 1;
+          color: #fff;
+          font-size: 10px;
+          right: 4px;
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+    .short-description {
+      font-size: 14px;
+      margin-top: 10px;
+      clear: both;
+      display: inline-block;
+
+      @media screen and (max-width: $breakpoint-phone) {
+      order: 2;
+      }
+    }
+
+    .side-wage {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      width: 110px;
+      text-align: right;
+      @media screen and (max-width: $breakpoint-phone) {
+        position: static;
+        text-align: left;
+      }
+      .rate {
+        font-size: 14px;
+        font-weight: bold;
+        color: lightblue;
+      }
+      .bonus {
+        font-size: 10px;
+        display: block;
+      }
+    }
+
+    .post-meta {
+      display: inline-block;
+      width: 100%;
+      border-top: 1px solid #dedede;
+      padding-right: 100px;
+      padding-top: 20px;
+
+      @media screen and (max-width: $breakpoint-phone) {
+        padding-right: 0;
+        padding-top: 10px;
+        order: 1;
+        border-top: 0;
+      }
+
+      span {
+        font-size: 14px;
+        display: block;
+        float: left;
+        margin-right: 6px;
+
+
+        @media screen and (max-width: $breakpoint-small-tablet) {
+          display: block;
+          float: none;
+        }
+
+        b {
+          margin-right: 5px;
+          float: left;
+        }
+        &:before {
+          content: '|';
+          margin: 0 6px 0 2px;
+          display: block;
+          float: left;
+          letter-spacing: -4px !important;
+          text-indent: -4px;
+          @media screen and (max-width: $breakpoint-small-tablet) {
+            content: none !important;
+          }
+        }
+        &:first-of-type:before,
+        span:first-of-type:before {
+          content: none;
+        }
+        span:before {
+          content: ',';
+          margin-right: 3px;
+        }
+      }
+    }
+
+    h3.post-title {
+      line-height: 1;
+      margin-bottom: 5px;
+      a {
+        font-size: 1em;
+        font-weight: 300;
+        color: #333;
+        line-height: 1;
+      }
+    }
+  }
+
+
+  &.small{
+    width: 480px;
+    padding: 0px 25px 18px;
+
+    float: none;
+    //display: inline-block;
+    margin-bottom: 0;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    z-index: 2;
+
+    @media screen and (max-width: $breakpoint-desktop) {
+      width: 450px;
+    }
+
+    @media screen and (max-width: $breakpoint-small-desktop) {
+      width: 350px;
+    }
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      width: 100%;
+      position: static;
+    }
+
+
+    &:before,
+    &:after {
+      bottom: -24px;
+      width: calc(50% + 5px);
+      left: -3px;
+
+      @media screen and (max-width: $breakpoint-desktop) {
+        bottom: -23px;
+      }
+      @media screen and (max-width: $breakpoint-small-desktop) {
+        bottom: -18px;
+      }
+      @media screen and (max-width: $breakpoint-tablet) {
+        bottom: -37px;
+        width: calc(50% + 6px);
+      }
+    }
+    &:before {
+      left: auto !important;
+      right: -3px;
+    }
+
+    .flag-wrapper {
+      display: flex;
+      padding-right: 25px;
+      padding-left: 25px;
+      padding-bottom: 0px;
+
+      &:after,
+      &:before {
+        @media screen and (max-width: $breakpoint-desktop) {
+          bottom: -2px;
+          width: calc(50% - 21px);
+        }
+        @media screen and (max-width: $breakpoint-small-desktop) {
+          bottom: 3px;
+          width: calc(50% - 23px);
+          right: 24px;
+        }
+        @media screen and (max-width: $breakpoint-tablet) {
+          bottom: -17px;
+          width: calc(50% - 20px);
+          right: 23px;
+        }
+      }
+
+      &:after {
+        @media screen and (max-width: $breakpoint-small-desktop) {
+          left: 24px;
+          right: auto;
+        }
+        @media screen and (max-width: $breakpoint-tablet) {
+          left: 23px;
+        }
+      }
+
+
+      .flag-inner-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: -35px;
+        @media screen and (max-width: $breakpoint-large-desktop) {
+          margin-bottom: -40px;
+        }
+        @media screen and (max-width: $breakpoint-small-desktop) {
+          margin-bottom: -30px;
+        }
+        @media screen and (max-width: $breakpoint-tablet) {
+          margin-bottom: -45px;
+        }
+      }
+
+      a.blue-arrow {
+        min-width: 100%;
+        padding-top: 13px;
+        @media screen and (max-width: $breakpoint-small-desktop) {
+          font-size: 20px;
+          margin-top: 0 !important;
+          &:before {
+            height: 40px;
+          }
+        }
+        @media screen and (max-width: $breakpoint-tablet) {
+          font-size: 1.65em;
+          min-width: 70%;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+

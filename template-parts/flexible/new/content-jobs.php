@@ -57,7 +57,11 @@ $link_class = get_sub_field('link_class');
                         //            $type = get_field('type');
                         $freight_type = get_field('freight_type');
                         $locations = get_field('location');
+
+
+                        $selectCompany = get_field('select_company');
                         //            $i =1;
+                        $selectCompanyURL = $selectCompany['url'];
 
                         $new = "new";
 
@@ -87,11 +91,25 @@ $link_class = get_sub_field('link_class');
                                     <?php if ($enticement_image): ?>
                                      style="background-image:url(<?= $enticement_imageURL; ?>);
                                      <?php endif; ?>
-                                             "></div>
+                                             ">
+                                    <?
+                                    if ($selectCompany):
+                                        $post = $selectCompany;
+                                        setup_postdata($post);
+
+                                        ?>
+                                        <a href="<?php the_permalink(); ?>"></a>
+                                        <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly
+                                        ?>
+                                    <?php endif; ?>
+
+                                </div>
                                 <?php if ($enticement_image_mobile): ?>
                                     <style type="text/css">
-                                        .footer-image[style*="background-image:url(<?=$enticement_imageURL;?>)"] {
-                                            background-image: <?=$enticement_image_mobileURL;?>;
+                                        @media screen and (max-width: 960px) {
+                                            .footer-image[style*="background-image:url(<?=$enticement_imageURL;?>)"] {
+                                                background-image: <?=$enticement_image_mobileURL;?>;
+                                            }
                                         }
                                     </style>
                                 <?php endif; ?>

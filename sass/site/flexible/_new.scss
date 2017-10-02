@@ -9,6 +9,9 @@ div#flex {
 
 .section {
   padding: 80px 0;
+  &.small {
+    padding: 20px 0;
+  }
 }
 
 
@@ -46,31 +49,39 @@ a.blue-arrow {
   font-size: 1.65em;
   text-transform: uppercase;
   margin: 60px auto 0;
-  padding: 20px 100px 0px 100px;
+  //padding: 20px 0px 0px 0px;
+  //min-width: 340px;
+  padding: 20px 20px 0px 20px;
+  min-width: 420px;
   border-bottom: 0;
-  min-width: 340px;
   text-align: center;
   font-weight: bold;
+  display: block;
+  max-width: 600px;
+
 
   @media screen and (max-width: $breakpoint-phone){
-    padding: 12px 0 0px 0;
+    padding: 12px 0 0 0;
   }
-
 
   &:after {
     content: '';
     background-image: url(images/blue-arrow.svg);
-    padding-top: 17%;
-    width: calc(100% + 200px);
+    //padding-top: 17%;
+    padding-top: 21%;
     display: block;
-    margin: 0 -200px;
+    //width: calc(100% + 0px);
+    //margin: 0 0px;
+    width: calc(100% + 40px);
+    margin: 0 -20px;
     position: relative;
-    right: -100px;
+    right: 0px;
     background-size: 100%;
     background-position: center bottom;
     background-repeat: no-repeat;
-    z-index: 0;
+    z-index: -1;
     min-height: 35px;
+    margin-top: -10%;
 
     @media screen and (max-width: $breakpoint-phone){
       padding-top: 22%;
@@ -82,7 +93,8 @@ a.blue-arrow {
     background-color: $color_dark_blue;
     width: 100%;
     position: absolute;
-    height: 59px;
+    //height: 59px;
+    height: 50px;
     top: 0;
     left: 0;
     z-index: -1;
@@ -129,10 +141,48 @@ footer#colophon .site-info {
 ## Form Shelf
 --------------------------------------------------------------*/
 @import "form-shelf";
+
 /*--------------------------------------------------------------
 ## Forms
 --------------------------------------------------------------*/
 @import "forms";
+
+/*--------------------------------------------------------------
+## Click state
+--------------------------------------------------------------*/
+@import "click-state";
+
+/*--------------------------------------------------------------
+## Company Slider
+--------------------------------------------------------------*/
+@import "company-slider";
+
+/*--------------------------------------------------------------
+## State Page
+--------------------------------------------------------------*/
+@import "state-page";
+
+/*--------------------------------------------------------------
+## Company Profile
+--------------------------------------------------------------*/
+@import "company-profile";
+
+/*--------------------------------------------------------------
+## Content
+--------------------------------------------------------------*/
+@import "content";
+
+/*--------------------------------------------------------------
+## Tables
+--------------------------------------------------------------*/
+@import "tables";
+
+/*--------------------------------------------------------------
+## Account
+--------------------------------------------------------------*/
+@import "account";
+
+
 
 
 
@@ -180,9 +230,14 @@ Dont show over 980px - Menu Styles here
 
 
 @media (min-width: $breakpoint-tablet) {
-
+  .grid-container.mobile {
+    max-width: 100%;
+  }
 }
 @media (max-width: $breakpoint-tablet) {
+  .grid-container.desktop {
+    max-width: 100%;
+  }
   .grid-container {
     max-width:750px;
   }
@@ -205,9 +260,7 @@ Dont show over 980px - Menu Styles here
 
 @media (max-width: $breakpoint-phone) {
   .grid-container {
-    max-width:280px;
+    max-width: 280px;
   }
-
 }
-
 

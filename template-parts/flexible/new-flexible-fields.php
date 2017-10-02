@@ -12,7 +12,11 @@ $contentOptions = array(
     'split_chevron_content'  => 'split-chevron',
     'jobs_in_your_area'      => 'jobs',
     'page_header'            => 'page-header',
-    'form_shelf'            => 'form-shelf',
+    'form_shelf'             => 'form-shelf',
+    'click_a_state'          => 'click-state',
+    'company_slider'         => 'company-slider',
+    'content'                => 'content',
+    'collapsable_table'      => 'table',
 
 );
 // check if the flexible content field has rows of data
@@ -30,10 +34,8 @@ if( have_rows('flexible_fields') ):
                 }
             }
         else :
-            // No layout selected
         endif;
     endwhile;
-    the_content();
 else :
-    // no layouts found
+    the_content();
 endif;

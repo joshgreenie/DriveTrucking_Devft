@@ -1,0 +1,47 @@
+
+.company-slider {
+  padding: 40px 0;
+  .heading {
+    margin: 0;
+    text-align: center;
+    padding: 0 0 10px 0;
+    text-transform: uppercase;
+    color: #02233A;
+  }
+
+}
+.owl-carousel-content {
+  padding: 0 50px;
+  .slide-item {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 10px 60px;
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: 50%;
+    }
+  }
+}
+.owl-dots {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+  .owl-dot {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border: 1px solid #02233a;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: all .35s ease;
+    cursor: pointer;
+    &.active {
+      background: #02233a;
+    }
+  }
+}
+

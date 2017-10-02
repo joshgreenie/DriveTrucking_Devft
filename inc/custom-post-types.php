@@ -305,6 +305,7 @@ function location() {
         'show_admin_column'          => true,
         'show_in_nav_menus'          => true,
         'show_tagcloud'              => true,
+        'rewrite'      => array('with_front' => false),
     );
     register_taxonomy( 'location', array( 'jobs' ), $args );
 
@@ -526,11 +527,23 @@ function my_insert_rewrite_rules( $rules ){
 add_action( 'generate_rewrite_rules', '_scorch_add_rewrite_rules' );*/
 
 
+
 function _scorch_enqueue_based_on_page() {
-    if (   is_singular( 'company' ) || is_singular('jobs') || is_page('company-jobs') || is_front_page() ) {
+    global $post;
+    $post_check = false;
+    if( have_rows('add_map_to_pages', 'option') ):
+    while( have_rows('add_map_to_pages', 'option') ):the_row();
+    $post_objects  = get_sub_field('load_map_js_on_this_page' , 'option');
+            if($post->ID == $post_objects):
+                $post_check = true;
+            endif;
+        endwhile;
+        ?>
+    <?php endif;
+
+    if (   is_singular( 'company' ) || is_singular('jobs') || is_page('company-jobs') || is_front_page() || $post_check == true  ) {
         wp_enqueue_script( 'vmap-js', get_stylesheet_directory_uri() . '/js/jquery.vmap.min.js', array('jquery'), '1.5.1', false );
         wp_enqueue_script( 'vmap-usa-js', get_stylesheet_directory_uri() . '/js/maps/jquery.vmap.usa.js', array('jquery'), '1.5.1', false );
-
     }
 }
 add_action( 'wp_enqueue_scripts', '_scorch_enqueue_based_on_page' );
@@ -615,9 +628,11 @@ function _scorch_job_posts_filter( $query ){
     if (isset($_GET['post_type'])) {
         $type = $_GET['post_type'];
     }
+    if (isset($_GET['admin_filter'])) {
     if( $_GET['admin_filter'] == 'job_status'){ $metavalue = 'active';}
     if( $_GET['admin_filter'] == 'sponsor_on_indeed'){ $metavalue = 'true';}
     if( $_GET['admin_filter'] == 'featured_job'){ $metavalue = 1;}
+    }
     if ( 'jobs' == $type && is_admin() && $pagenow=='edit.php' && isset($_GET['admin_filter']) && $_GET['admin_filter'] != '') {
         $query->query_vars['meta_key'] = $_GET['admin_filter'];
         $query->query_vars['meta_value'] = $metavalue;

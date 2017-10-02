@@ -22,7 +22,7 @@ $background_image_url = $background_image['url'];
         <?php if ($main_content || $title || $map): ?>
         <div class="primary-content">
             <div class="grid-container">
-                <<?= $element_type; ?> class="shelf-header"><?= $title; ?></<?= $element_type; ?>>
+            <<?= $element_type; ?> class="shelf-header"><?= $title; ?></<?= $element_type; ?>>
             <?php if ($map) { ?>
                 <div id="vmap"></div>
                 <script>
@@ -43,7 +43,7 @@ $background_image_url = $background_image['url'];
                                     var regionTrim = region.replace(/\s+/g, '-').toLowerCase(),
                                         urlBase = window.location.protocol + "//" + window.location.host + "/";
 
-                                    window.location.replace(urlBase+'/location/'+regionTrim);
+                                    window.location.replace(urlBase+'/'+regionTrim);
                                 }
                             });
                         });

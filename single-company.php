@@ -7,7 +7,9 @@
  * @package _scorch
  */
 
-get_header(); ?>
+get_header('company');
+get_sidebar('job-listing-full');
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -15,7 +17,7 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content', 'company' );
+			get_template_part( 'template-parts/content', 'company-new' );
 		
 		endwhile; // End of the loop.
 		?>
@@ -24,5 +26,4 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar('job-listing');
 get_footer();
