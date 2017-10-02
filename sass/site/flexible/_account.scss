@@ -1,5 +1,5 @@
-.account-sidebar {
-  section {
+#secondary.account-sidebar.widget-area {
+  section.widget_nav_menu {
     border: 1px solid #03243b;
     h2 {
       color: #fff !important;
@@ -7,19 +7,39 @@
       text-indent: 10px;
       margin: 0 !important;
     }
-    ul li {
-      margin: 0;
-      a {
-        padding: 10px 20px !important;
-        border-bottom: 2px groove rgba(203, 203, 203, 0.24);
-        &:hover {
-          background: #eee;
-          color: #134c7c;
+    ul#menu-account-menu {
+      li {
+        font-size: initial;
+        clear: both;
+        display: inline;
+        a {
+          padding: 10px 20px !important;
+          border-top: 2px groove rgba(203, 203, 203, 0.24);
+          &:hover {
+            background: #eee;
+            color: #134c7c;
+          }
         }
       }
-      &:last-child a {
-        border-bottom: none;
+      > li {
+        margin: 0;
+        &:first-child > a {
+          border-top: none;
+        }
+        ul {
+          padding: 0;
+          a {
+            padding: 5px 20px !important;
+            font-size: .8rem;
+            border-top: 1px solid #eee;
+            &:before {
+              content: '- ';
+              padding-right: 5px;
+            }
+          }
+        }
       }
     }
   }
 }
+

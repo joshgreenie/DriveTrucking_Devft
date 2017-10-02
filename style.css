@@ -7443,23 +7443,36 @@ div.company-profile aside#company-header {
 /*--------------------------------------------------------------
 ## Account
 --------------------------------------------------------------*/
-.account-sidebar section {
+#secondary.account-sidebar.widget-area section.widget_nav_menu {
   border: 1px solid #03243b; }
-  .account-sidebar section h2 {
+  #secondary.account-sidebar.widget-area section.widget_nav_menu h2 {
     color: #fff !important;
     background-color: #03243b;
     text-indent: 10px;
     margin: 0 !important; }
-  .account-sidebar section ul li {
-    margin: 0; }
-    .account-sidebar section ul li a {
+  #secondary.account-sidebar.widget-area section.widget_nav_menu ul#menu-account-menu li {
+    font-size: initial;
+    clear: both;
+    display: inline; }
+    #secondary.account-sidebar.widget-area section.widget_nav_menu ul#menu-account-menu li a {
       padding: 10px 20px !important;
-      border-bottom: 2px groove rgba(203, 203, 203, 0.24); }
-      .account-sidebar section ul li a:hover {
+      border-top: 2px groove rgba(203, 203, 203, 0.24); }
+      #secondary.account-sidebar.widget-area section.widget_nav_menu ul#menu-account-menu li a:hover {
         background: #eee;
         color: #134c7c; }
-    .account-sidebar section ul li:last-child a {
-      border-bottom: none; }
+  #secondary.account-sidebar.widget-area section.widget_nav_menu ul#menu-account-menu > li {
+    margin: 0; }
+    #secondary.account-sidebar.widget-area section.widget_nav_menu ul#menu-account-menu > li:first-child > a {
+      border-top: none; }
+    #secondary.account-sidebar.widget-area section.widget_nav_menu ul#menu-account-menu > li ul {
+      padding: 0; }
+      #secondary.account-sidebar.widget-area section.widget_nav_menu ul#menu-account-menu > li ul a {
+        padding: 5px 20px !important;
+        font-size: .8rem;
+        border-top: 1px solid #eee; }
+        #secondary.account-sidebar.widget-area section.widget_nav_menu ul#menu-account-menu > li ul a:before {
+          content: '- ';
+          padding-right: 5px; }
 
 /*===================================
 Dont show over 980px - Menu Styles here
