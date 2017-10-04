@@ -7474,6 +7474,58 @@ div.company-profile aside#company-header {
           content: '- ';
           padding-right: 5px; }
 
+.gform_wrapper ul.gform_fields {
+  text-align: left; }
+  .gform_wrapper ul.gform_fields .chosen-container a {
+    padding: 5px 10px !important;
+    height: auto !important;
+    background: none !important;
+    border-radius: 0 !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    line-height: 32px !important; }
+  .gform_wrapper ul.gform_fields .chosen-container.chosen-container-single .chosen-single div b {
+    background-position: 0 12px !important;
+    background-size: initial !important; }
+  .gform_wrapper ul.gform_fields .chosen-container.chosen-container-single div.chosen-search.chosen-search.chosen-search input[type=text] {
+    height: 23px !important; }
+  .gform_wrapper ul.gform_fields li.gf_list_inline {
+    margin-top: 10px !important; }
+    .gform_wrapper ul.gform_fields li.gf_list_inline label {
+      font-weight: 300 !important; }
+    .gform_wrapper ul.gform_fields li.gf_list_inline div.ginput_container_checkbox {
+      margin: 0 !important; }
+      .gform_wrapper ul.gform_fields li.gf_list_inline div.ginput_container_checkbox .gfield_checkbox li {
+        position: relative; }
+        .gform_wrapper ul.gform_fields li.gf_list_inline div.ginput_container_checkbox .gfield_checkbox li input[type=checkbox] {
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: 100% !important;
+          height: 100%;
+          opacity: 0;
+          display: block !important;
+          max-width: 100%;
+          margin: 0 !important;
+          cursor: pointer; }
+          .gform_wrapper ul.gform_fields li.gf_list_inline div.ginput_container_checkbox .gfield_checkbox li input[type=checkbox]:checked + label {
+            background-color: #02243b !important;
+            color: #fff !important; }
+          .gform_wrapper ul.gform_fields li.gf_list_inline div.ginput_container_checkbox .gfield_checkbox li input[type=checkbox]:checked:hover + label {
+            background-color: rgba(2, 36, 59, 0.09); }
+        .gform_wrapper ul.gform_fields li.gf_list_inline div.ginput_container_checkbox .gfield_checkbox li label {
+          font-weight: 300 !important;
+          max-width: 100% !important;
+          width: 100% !important;
+          color: #02243b;
+          border: 1px solid #02243b;
+          padding: 3px 12px 1px !important;
+          -webkit-transition: all .35s ease;
+          -o-transition: all .35s ease;
+          transition: all .35s ease; }
+
 /*===================================
 Dont show over 980px - Menu Styles here
 ===================================*/

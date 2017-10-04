@@ -198,6 +198,18 @@ function _scorch_scripts() {
 
     wp_enqueue_script( 'isotope-js', get_stylesheet_directory_uri() . '/js/isotope.pkgd.min.js', array('jquery'), '1.0.0', false );
 
+//
+//    wp_enqueue_style( 'component-css', get_stylesheet_directory_uri() . '/css/component.css', false, false, false );
+//    wp_enqueue_style( 'select-css', get_stylesheet_directory_uri() . '/css/cs-select.css', false, false, false );
+//    wp_enqueue_style( 'boxes-css', get_stylesheet_directory_uri() . '/css/cs-skin-boxes.css', false, false, false );
+//
+//
+//    wp_enqueue_script( 'modernizr-js', get_stylesheet_directory_uri() . '/js/forms/modernizr.custom.js', array('jquery'), '1.0.0', false );
+//    wp_enqueue_script( 'classie-js', get_stylesheet_directory_uri() . '/js/forms/classie.js', array('jquery'), '1.0.0', true );
+//    wp_enqueue_script( 'selectFx-js', get_stylesheet_directory_uri() . '/js/forms/selectFx.js', array('jquery'), '1.0.0', true );
+//    wp_enqueue_script( 'fullscreenForm-js', get_stylesheet_directory_uri() . '/js/forms/fullscreenForm.js', array('jquery'), '1.0.0', true );
+
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -278,3 +290,42 @@ function wpdocs_custom_excerpt_length( $length ) {
     return 26;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+
+
+//add_filter('gform_field_value_driver_city', create_function("", '$value = my_user_info(\'driver_city\'); return $value;' ));
+//add_filter('gform_field_value_driver_salary_minimum', create_function("", '$value = my_user_infos(\'driver_salary_minimum\'); return $value;' ));
+//
+//add_filter('gform_field_value_city', "my_user_info('driver_city')");
+//function my_user_info($value){
+//    $id = get_current_user_id();
+//    $post_id = 'user_'.$id;
+//    return get_field($value, $post_id);
+//}
+
+$field_names = array(
+    'driver_contact_me_via',
+    'driver_driver_type',
+    'driver_endorsements',
+    'driver_freight_type',
+    'driver_run_type',
+    'driver_valid_cdl',
+);
+foreach ($field_names as $name) {
+    add_filter('gform_field_value_'.$name, 'load_my_custom_values');
+}
+function load_my_custom_values($value) {
+    // get the current filter that was called
+    // it will contain the field name
+    $filter = current_filter();
+    // remove 'gform_field_value_' from filter name
+    $field = str_replace('gform_field_value_', '', $filter);
+    $id = get_current_user_id();
+    $post_id = 'user_'.$id;
+    $value = get_field($field, $post_id);
+    return $value;
+}
+
+
+
+
