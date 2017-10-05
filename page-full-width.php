@@ -10,13 +10,11 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package _scorch
- *
- * Template Name: No Sidebar
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area full-width">
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 			<?php
@@ -36,5 +34,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-//get_sidebar();
+get_sidebar();
 get_footer();

@@ -449,17 +449,20 @@ header#masthead #brand {
   display: flex;
   justify-content: space-between;
 
-  .grid-container {
-    display: table;
+  //.grid-container {
+  //  display: table;
+  //}
+  section#brand,
+  .drive-trucking-login  {
+    flex-grow: 1;
+    flex-basis: calc((100% / 2) - 820px);
   }
 
-
   .drive-trucking-login {
-
     width: auto;
     text-align: center;
-    display: inline-flex;
-    align-items: center;
+    display: flex;
+    align-items: stretch;
     justify-content: center;
     margin: 20px 0px 20px 20px;
 
@@ -467,11 +470,18 @@ header#masthead #brand {
       margin-right: 89px;
       margin-left: 0;
     }
+
     a {
       background-color: #134c7c;
       color: #fff;
-      padding: 28.6px 75px;
+      //padding: 28.6px 75px;
       font-size: 1.3em;
+      width: 100%;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       @media screen and (max-width: $breakpoint-desktop) {
         font-size: 1.13em;
         padding: 34px 48px;
@@ -485,7 +495,8 @@ header#masthead #brand {
     line-height: 1;
     min-height: 90px;
     width: calc(100% - 620px);
-    margin: 20px 100px;
+    //margin: 20px 100px;
+    margin: 20px 0px;
     @media screen and (max-width: $breakpoint-desktop) {
       padding: 24px 0px;
       margin: 20px 80px;
@@ -518,12 +529,23 @@ header#masthead #brand {
   }
 }
 
-header#masthead #brand .site-logo {
-  float: none;
-  display: flex;
-  a {
-    display: inline-block;
-    font-size: 0;
+header#masthead #brand  {
+  margin: 20px 20px 20px 0;
+  align-self: center;
+  .site-logo {
+    float: none;
+    display: flex;
+    width: 100%;
+    a {
+      display: inline-block;
+      font-size: 0;
+      width: 100%;
+      background: #124b7b;
+      text-align: center;
+    }
+    img {
+      margin: 0;
+    }
   }
 }
 

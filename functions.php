@@ -48,6 +48,7 @@ function _scorch_setup() {
 	register_nav_menus( array(
         'primary' => esc_html__( 'Primary', '_scorch' ),
         'main' => esc_html__( 'Main Nav', '_scorch' ),
+        'account' => esc_html__( 'Account', '_scorch' ),
 	) );
 
 	/*
@@ -198,6 +199,18 @@ function _scorch_scripts() {
 
     wp_enqueue_script( 'isotope-js', get_stylesheet_directory_uri() . '/js/isotope.pkgd.min.js', array('jquery'), '1.0.0', false );
 
+//
+//    wp_enqueue_style( 'component-css', get_stylesheet_directory_uri() . '/css/component.css', false, false, false );
+//    wp_enqueue_style( 'select-css', get_stylesheet_directory_uri() . '/css/cs-select.css', false, false, false );
+//    wp_enqueue_style( 'boxes-css', get_stylesheet_directory_uri() . '/css/cs-skin-boxes.css', false, false, false );
+//
+//
+//    wp_enqueue_script( 'modernizr-js', get_stylesheet_directory_uri() . '/js/forms/modernizr.custom.js', array('jquery'), '1.0.0', false );
+//    wp_enqueue_script( 'classie-js', get_stylesheet_directory_uri() . '/js/forms/classie.js', array('jquery'), '1.0.0', true );
+//    wp_enqueue_script( 'selectFx-js', get_stylesheet_directory_uri() . '/js/forms/selectFx.js', array('jquery'), '1.0.0', true );
+//    wp_enqueue_script( 'fullscreenForm-js', get_stylesheet_directory_uri() . '/js/forms/fullscreenForm.js', array('jquery'), '1.0.0', true );
+
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -233,8 +246,7 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Load Woocommerce compatibility files.
  */
-require get_template_directory() . '/inc/woocommerce-settings.php';
-
+//require get_template_directory() . '/inc/woocommerce-settings.php';
 /**
  * Load Advanced Custom fields file.
  */
@@ -265,16 +277,13 @@ require get_template_directory() . '/inc/gravity-submit.php';
  */
 require get_template_directory() . '/inc/acf-taxonomy-depth-rule.php';
 
-//
-//add_action('init','change_author_permalinks');
-//function change_author_permalinks()
-//{
-//    global $wp_rewrite;
-//    $wp_rewrite->author_base = ''; // Change 'member' to be the base URL you wish to use
-//    $wp_rewrite->author_structure = '/' . $wp_rewrite->author_base. '/%author%';
-//}
+/**
+ * Load redirection file.
+ */
+require get_template_directory() . '/inc/redirects.php';
 
-function wpdocs_custom_excerpt_length( $length ) {
-    return 26;
-}
-add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+/**
+ * Load shortcodes file.
+ */
+require get_template_directory() . '/inc/shortcodes.php';
+

@@ -14,7 +14,7 @@
 <?php
 
 $add_base_flexible_fields = get_field('add_base_flexible_fields');
-if(!$add_base_flexible_fields || !is_tax('location')):
+if(!$add_base_flexible_fields && !is_tax('location')  && !is_page_template('page-login-template.php')):
 ?>
     </div><!-- #content -->
     <?php endif;?>

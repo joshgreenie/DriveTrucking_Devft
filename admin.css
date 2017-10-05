@@ -1,3 +1,6 @@
 form#edittag {
     max-width: 100%;
 }
+.gmw-location-section.additional-information-wrapper {
+    display: none;
+}

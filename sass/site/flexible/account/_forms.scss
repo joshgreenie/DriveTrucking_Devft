@@ -1,0 +1,95 @@
+
+.gform_wrapper ul.gform_fields  {
+
+  text-align: left;
+
+  .chosen-container {
+    a {
+      padding: 5px 10px !important;
+      height: auto !important;
+      background: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      line-height: 32px !important;
+    }
+    &.chosen-container-single {
+      .chosen-single div b {
+        background-position: 0 12px !important;
+        background-size: initial !important;
+      }
+      div.chosen-search.chosen-search.chosen-search input[type=text] {
+        height: 23px !important;
+      }
+    }
+  }
+  li.gf_list_inline {
+
+    margin-top: 10px !important;
+
+    label {
+      font-weight: 300 !important;
+    }
+    div.ginput_container_checkbox {
+      margin: 0 !important;
+      .gfield_checkbox {
+        li {
+          position: relative;
+          input[type=checkbox] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100% !important;
+            height: 100%;
+            opacity: 0;
+            display: block !important;
+            max-width: 100%;
+            margin: 0 !important;
+            cursor: pointer;
+            &:checked {
+              + label {
+                background-color: #02243b !important;
+                color: #fff !important;
+              }
+              &:hover + label {
+                background-color: rgba(2, 36, 59, 0.09);
+              }
+            }
+          }
+          label {
+            font-weight: 300 !important;
+            max-width: 100% !important;
+            width: 100% !important;
+            color: #02243b;
+            border: 1px solid #02243b;
+            padding: 3px 12px 1px !important;
+            transition: all .35s ease;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+li.gfield {
+
+  input.gfgeo-address-field[data-locator_enabled="1"],
+  input.advanced-address-autocomplete[data-locator_enabled="1"] {
+    text-indent: 30px;
+  }
+
+  div.gfgeo-locator-button-wrapper.infield {
+    top: 10px;
+    max-height: calc(100% - 10px);
+    left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: auto;
+      margin: 0;
+    }
+  }
+}

@@ -28,11 +28,14 @@ $login_text = get_field('login_text', 'option');
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
     <?php wp_head(); ?>
-     <?php // if ($header_scripts): echo $header_scripts; endif; ?>
-     <?php // get_template_part('template-parts/header/content', 'dfp'); ?>
+    <?php // if ($header_scripts): echo $header_scripts; endif; ?>
+    <?php // get_template_part('template-parts/header/content', 'dfp'); ?>
+
+
 </head>
 
 <body <?php body_class(); ?>>
+
 <?php /*Put After Body Scripts from settings here.*/ ?>
 <?php //if ($after_body_scripts): echo $after_body_scripts; endif; ?>
 <div id="page" class="site">
@@ -40,44 +43,45 @@ $login_text = get_field('login_text', 'option');
 
     <header id="masthead" class="site-header" role="banner">
         <?php /*get_template_part('template-parts/header/sub', 'header')*/ ?>
-<!--        <div id="main-header">-->
+        <!--        <div id="main-header">-->
         <div id="new-header">
-            <div class="top-header">
-                <div class="grid-container">
-                <section id="brand" class="site-brand">
-                    <?php if ($use_logo == "html"): ?>
-                        <h2 class="site-logo"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"
-                                                 class=""><?php echo $icon_font_html; ?></a></h2>
-                    <?php elseif ($use_logo == "upload") : ?>
-                        <div class='site-logo'>
-                            <a href='<?php echo esc_url(home_url('/')); ?>'
-                               title='<?php echo esc_attr(get_bloginfo('name', 'display')); ?>' rel='home'><img
-                                        src='<?php echo $upload_logo['url']; ?>'
-                                        alt='<?php echo esc_attr(get_bloginfo('name', 'display')); ?>'></a>
-                        </div>
-                    <?php elseif ($use_logo == "svg") : ?>
-                        <div class='site-logo'>
-                            <a href='<?php echo esc_url(home_url('/')); ?>'
-                               title='<?php echo esc_attr(get_bloginfo('name', 'display')); ?>' rel='home'><img
-                                        src='<?php echo $svg_logo['url']; ?>' alt=''></a>
-                        </div>
-                    <?php else: ?>
-                        <h2 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"
-                                                  rel="home"><?php bloginfo('name'); ?></a></h2>
-                        <h3 class="site-description"><?php bloginfo('description'); ?></h3>
-                    <?php endif; ?>
-                </section>
+            <div class="grid-container">
+                <div class="top-header">
+                    <section id="brand" class="site-brand">
+                        <?php if ($use_logo == "html"): ?>
+                            <h2 class="site-logo"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"
+                                                     class=""><?php echo $icon_font_html; ?></a></h2>
+                        <?php elseif ($use_logo == "upload") : ?>
+                            <div class='site-logo'>
+                                <a href='<?php echo esc_url(home_url('/')); ?>'
+                                   title='<?php echo esc_attr(get_bloginfo('name', 'display')); ?>' rel='home'><img
+                                            src='<?php echo $upload_logo['url']; ?>'
+                                            alt='<?php echo esc_attr(get_bloginfo('name', 'display')); ?>'></a>
+                            </div>
+                        <?php elseif ($use_logo == "svg") : ?>
+                            <div class='site-logo'>
+                                <a href='<?php echo esc_url(home_url('/')); ?>'
+                                   title='<?php echo esc_attr(get_bloginfo('name', 'display')); ?>' rel='home'><img
+                                            src='<?php echo $svg_logo['url']; ?>' alt=''></a>
+                            </div>
+                        <?php else: ?>
+                            <h2 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"
+                                                      rel="home"><?php bloginfo('name'); ?></a></h2>
+                            <h3 class="site-description"><?php bloginfo('description'); ?></h3>
+                        <?php endif; ?>
+                    </section>
 
-                <?php if($adspace):?>
-                <div class="drive-trucking-adspace">
-                        <?=$adspace;?>
-                </div>
-                <?php endif; ?>
-                <?php if($login_url):?>
-                <div class="drive-trucking-login">
-                    <a href="<?=$login_url;?>"><?=$login_text;?></a>
-                </div>
-                <?php endif; ?>
+                    <?php if ($adspace): ?>
+                        <div class="drive-trucking-adspace">
+                            <?= $adspace; ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if (is_user_logged_in()):
+                        echo '<div class="drive-trucking-login"><a href="' . wp_logout_url('/login') . '">' . __("Log Out") . '</a></div>';
+                    else:
+                        echo '<div class="drive-trucking-login"><a href="' . driver_login_url(get_permalink()) . '">' . __("Log In") . '</a></div>';
+                    endif; ?>
                 </div>
 
             </div>
@@ -92,10 +96,12 @@ $login_text = get_field('login_text', 'option');
             </div>
         </div>
     </header><!-- #masthead -->
+
     <?php
 
     $add_base_flexible_fields = get_field('add_base_flexible_fields');
-    if(!$add_base_flexible_fields):
+    if (!$add_base_flexible_fields && !is_page_template('page-login-template.php') && !is_tax('location')):
     ?>
     <div id="content" class="site-content">
-        <?php endif;?>
+
+        <?php endif; ?>
