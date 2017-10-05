@@ -40,17 +40,14 @@ div#flex {
 }
 
 
-a.blue-arrow {
-  //background-color: $color_dark_blue;
-  //border-bottom: 3px solid $color_orange;
+a.blue-arrow,
+section.login-form form#loginform p.login-submit {
   position: relative;
   z-index: 3;
   color: #fff;
   font-size: 1.65em;
   text-transform: uppercase;
   margin: 60px auto 0;
-  //padding: 20px 0px 0px 0px;
-  //min-width: 340px;
   padding: 20px 20px 0px 20px;
   min-width: 420px;
   border-bottom: 0;
@@ -67,11 +64,8 @@ a.blue-arrow {
   &:after {
     content: '';
     background-image: url(images/blue-arrow.svg);
-    //padding-top: 17%;
     padding-top: 21%;
     display: block;
-    //width: calc(100% + 0px);
-    //margin: 0 0px;
     width: calc(100% + 40px);
     margin: 0 -20px;
     position: relative;
@@ -93,13 +87,14 @@ a.blue-arrow {
     background-color: $color_dark_blue;
     width: 100%;
     position: absolute;
-    //height: 59px;
     height: 50px;
     top: 0;
     left: 0;
     z-index: -1;
   }
 }
+
+
 
 footer#colophon .site-info {
   display: flex;
@@ -180,7 +175,7 @@ footer#colophon .site-info {
 /*--------------------------------------------------------------
 ## Account
 --------------------------------------------------------------*/
-@import "account";
+@import "account/_account";
 
 
 

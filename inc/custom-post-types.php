@@ -246,7 +246,7 @@ if ( ! function_exists('jobs') ) {
             'label'                 => __( 'Job', '_scorch' ),
             'description'           => __( 'Jobs Listings', '_scorch' ),
             'labels'                => $labels,
-            'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+            'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail' , 'author' ),
             'taxonomies'            => array( 'location', 'driver_type', 'freight_type', 'run_type' ),
             'hierarchical'          => false,
             'public'                => true,

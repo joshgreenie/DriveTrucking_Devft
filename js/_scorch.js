@@ -309,6 +309,10 @@
 
 
     $(document).ready(function () {
+
+        $('input#user_login').attr("placeholder", "Username");
+        $('input#user_pass').attr("placeholder", "Password");
+
         $('#hamburgler').click(function () {
             $(this).toggleClass('open');
             $('#site-navigation').toggleClass('close');

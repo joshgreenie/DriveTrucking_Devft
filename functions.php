@@ -48,6 +48,7 @@ function _scorch_setup() {
 	register_nav_menus( array(
         'primary' => esc_html__( 'Primary', '_scorch' ),
         'main' => esc_html__( 'Main Nav', '_scorch' ),
+        'account' => esc_html__( 'Account', '_scorch' ),
 	) );
 
 	/*
@@ -245,8 +246,7 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Load Woocommerce compatibility files.
  */
-require get_template_directory() . '/inc/woocommerce-settings.php';
-
+//require get_template_directory() . '/inc/woocommerce-settings.php';
 /**
  * Load Advanced Custom fields file.
  */
@@ -277,55 +277,13 @@ require get_template_directory() . '/inc/gravity-submit.php';
  */
 require get_template_directory() . '/inc/acf-taxonomy-depth-rule.php';
 
-//
-//add_action('init','change_author_permalinks');
-//function change_author_permalinks()
-//{
-//    global $wp_rewrite;
-//    $wp_rewrite->author_base = ''; // Change 'member' to be the base URL you wish to use
-//    $wp_rewrite->author_structure = '/' . $wp_rewrite->author_base. '/%author%';
-//}
+/**
+ * Load redirection file.
+ */
+require get_template_directory() . '/inc/redirects.php';
 
-function wpdocs_custom_excerpt_length( $length ) {
-    return 26;
-}
-add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
-
-
-
-//add_filter('gform_field_value_driver_city', create_function("", '$value = my_user_info(\'driver_city\'); return $value;' ));
-//add_filter('gform_field_value_driver_salary_minimum', create_function("", '$value = my_user_infos(\'driver_salary_minimum\'); return $value;' ));
-//
-//add_filter('gform_field_value_city', "my_user_info('driver_city')");
-//function my_user_info($value){
-//    $id = get_current_user_id();
-//    $post_id = 'user_'.$id;
-//    return get_field($value, $post_id);
-//}
-
-$field_names = array(
-    'driver_contact_me_via',
-    'driver_driver_type',
-    'driver_endorsements',
-    'driver_freight_type',
-    'driver_run_type',
-    'driver_valid_cdl',
-);
-foreach ($field_names as $name) {
-    add_filter('gform_field_value_'.$name, 'load_my_custom_values');
-}
-function load_my_custom_values($value) {
-    // get the current filter that was called
-    // it will contain the field name
-    $filter = current_filter();
-    // remove 'gform_field_value_' from filter name
-    $field = str_replace('gform_field_value_', '', $filter);
-    $id = get_current_user_id();
-    $post_id = 'user_'.$id;
-    $value = get_field($field, $post_id);
-    return $value;
-}
-
-
-
+/**
+ * Load shortcodes file.
+ */
+require get_template_directory() . '/inc/shortcodes.php';
 

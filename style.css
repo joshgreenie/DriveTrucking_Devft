@@ -1886,19 +1886,26 @@ header#masthead #brand {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between; }
-  .top-header .grid-container {
-    display: table; }
+  .top-header section#brand,
+  .top-header .drive-trucking-login {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-flex-basis: calc((100% / 2) - 820px);
+    -ms-flex-preferred-size: calc((100% / 2) - 820px);
+    flex-basis: calc((100% / 2) - 820px); }
   .top-header .drive-trucking-login {
     width: auto;
     text-align: center;
-    display: -webkit-inline-box;
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -1911,8 +1918,21 @@ header#masthead #brand {
     .top-header .drive-trucking-login a {
       background-color: #134c7c;
       color: #fff;
-      padding: 28.6px 75px;
-      font-size: 1.3em; }
+      font-size: 1.3em;
+      width: 100%;
+      padding: 0;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
       @media screen and (max-width: 1500px) {
         .top-header .drive-trucking-login a {
           font-size: 1.13em;
@@ -1922,7 +1942,7 @@ header#masthead #brand {
     line-height: 1;
     min-height: 90px;
     width: calc(100% - 620px);
-    margin: 20px 100px;
+    margin: 20px 0px;
     background: #eee;
     display: -webkit-inline-box;
     display: -webkit-inline-flex;
@@ -1952,15 +1972,26 @@ header#masthead #brand {
       font-weight: bold;
       color: #fff; }
 
-header#masthead #brand .site-logo {
-  float: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex; }
-  header#masthead #brand .site-logo a {
-    display: inline-block;
-    font-size: 0; }
+header#masthead #brand {
+  margin: 20px 20px 20px 0;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center; }
+  header#masthead #brand .site-logo {
+    float: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%; }
+    header#masthead #brand .site-logo a {
+      display: inline-block;
+      font-size: 0;
+      width: 100%;
+      background: #124b7b;
+      text-align: center; }
+    header#masthead #brand .site-logo img {
+      margin: 0; }
 
 @media screen and (max-width: 960px) {
   .drive-trucking-adspace {
@@ -4932,7 +4963,8 @@ div#flex {
         background-position: 0px 155px !important;
         background-repeat: no-repeat; } }
 
-a.blue-arrow {
+a.blue-arrow,
+section.login-form form#loginform p.login-submit {
   position: relative;
   z-index: 3;
   color: #fff;
@@ -4947,9 +4979,11 @@ a.blue-arrow {
   display: block;
   max-width: 600px; }
   @media screen and (max-width: 500px) {
-    a.blue-arrow {
+    a.blue-arrow,
+    section.login-form form#loginform p.login-submit {
       padding: 12px 0 0 0; } }
-  a.blue-arrow:after {
+  a.blue-arrow:after,
+  section.login-form form#loginform p.login-submit:after {
     content: '';
     background-image: url(images/blue-arrow.svg);
     padding-top: 21%;
@@ -4965,9 +4999,11 @@ a.blue-arrow {
     min-height: 35px;
     margin-top: -10%; }
     @media screen and (max-width: 500px) {
-      a.blue-arrow:after {
+      a.blue-arrow:after,
+      section.login-form form#loginform p.login-submit:after {
         padding-top: 22%; } }
-  a.blue-arrow:before {
+  a.blue-arrow:before,
+  section.login-form form#loginform p.login-submit:before {
     content: '';
     display: block;
     background-color: #02233A;
@@ -7443,6 +7479,58 @@ div.company-profile aside#company-header {
 /*--------------------------------------------------------------
 ## Account
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Login
+--------------------------------------------------------------*/
+form#loginform {
+  max-width: 300px;
+  margin: 20px auto 50px;
+  text-align: center; }
+
+p.login-username label, p.login-password label {
+  display: none; }
+
+p.login-username input, p.login-password input {
+  width: 100%;
+  border-radius: 0;
+  font-size: 1.2rem;
+  text-indent: 5px; }
+
+section.login-form form#loginform p.login-submit {
+  margin: 0;
+  max-width: 100% !important;
+  min-width: 280px;
+  padding: 0; }
+
+section.login-form form#loginform p.login-submit input {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  color: #fff;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 20px 20px 0px 20px;
+  z-index: 9;
+  position: relative;
+  height: auto !important;
+  line-height: 1.2; }
+
+section.login-form form#loginform p.login-submit:before {
+  z-index: -1; }
+
+section.login-form form#loginform p.login-submit:after {
+  margin: 0;
+  width: 100%;
+  padding-top: 10%; }
+
+div#content.full-width-content {
+  max-width: 100%; }
+
+/*--------------------------------------------------------------
+## sidebar
+--------------------------------------------------------------*/
 #secondary.account-sidebar.widget-area section.widget_nav_menu {
   border: 1px solid #03243b; }
   #secondary.account-sidebar.widget-area section.widget_nav_menu h2 {
@@ -7474,6 +7562,9 @@ div.company-profile aside#company-header {
           content: '- ';
           padding-right: 5px; }
 
+/*--------------------------------------------------------------
+## forms
+--------------------------------------------------------------*/
 .gform_wrapper ul.gform_fields {
   text-align: left; }
   .gform_wrapper ul.gform_fields .chosen-container a {
@@ -7525,6 +7616,30 @@ div.company-profile aside#company-header {
           -webkit-transition: all .35s ease;
           -o-transition: all .35s ease;
           transition: all .35s ease; }
+
+li.gfield input.gfgeo-address-field[data-locator_enabled="1"],
+li.gfield input.advanced-address-autocomplete[data-locator_enabled="1"] {
+  text-indent: 30px; }
+
+li.gfield div.gfgeo-locator-button-wrapper.infield {
+  top: 10px;
+  max-height: calc(100% - 10px);
+  left: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  li.gfield div.gfgeo-locator-button-wrapper.infield img {
+    width: auto;
+    margin: 0; }
 
 /*===================================
 Dont show over 980px - Menu Styles here

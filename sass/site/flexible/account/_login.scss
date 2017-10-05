@@ -1,0 +1,53 @@
+form#loginform {
+  max-width: 300px;
+  margin: 20px auto 50px;
+  text-align: center;
+}
+
+p.login-username label,p.login-password label {
+  display: none;
+}
+
+p.login-username input, p.login-password input {
+  width: 100%;
+  border-radius: 0;
+  font-size: 1.2rem;
+  text-indent: 5px;
+}
+
+section.login-form form#loginform p.login-submit {
+  margin: 0;
+  max-width: 100% !important;
+  min-width: 280px;
+  padding: 0;
+}
+
+section.login-form form#loginform p.login-submit input {
+  box-shadow: none;
+  text-shadow: none;
+  color: #fff;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 20px 20px 0px 20px;
+  z-index: 9;
+  position: relative;
+  height: auto !important;
+  line-height: 1.2;
+}
+
+p.login-submit {}
+
+section.login-form form#loginform p.login-submit:before {
+  z-index: -1;
+}
+
+section.login-form form#loginform p.login-submit:after {
+  margin: 0;
+  width: 100%;
+  padding-top: 10%;
+}
+div#content.full-width-content {
+  max-width: 100%;
+}
