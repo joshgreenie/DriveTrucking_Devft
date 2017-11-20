@@ -34,5 +34,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-//get_sidebar('job-listing-new');
+get_sidebar('job-listing');
 get_footer();

@@ -6,6 +6,10 @@
 	margin: 0 0 1.5em;
 }
 
+.blog .hentry {
+  margin-bottom: 0 !important;
+}
+
 .byline,
 .updated:not(.published){
 	display: none;

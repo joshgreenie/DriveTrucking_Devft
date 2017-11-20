@@ -86,6 +86,7 @@ function _scorch_entry_footer() {
 		}
 	}
 
+
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
 		comments_popup_link( esc_html__( 'Leave a comment', '_scorch' ), esc_html__( '1 Comment', '_scorch' ), esc_html__( '% Comments', '_scorch' ) );

@@ -6,7 +6,6 @@
  *
  * @package _scorch
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -41,7 +40,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php _scorch_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+<!--	<footer class="entry-footer">-->
+<!--		--><?php //_scorch_entry_footer(); ?>
+<!--	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

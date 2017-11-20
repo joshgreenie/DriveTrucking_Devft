@@ -17,6 +17,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<?php
+
 			$company_slug = get_query_var('company-name');
 			$cid = get_id_by_slug($company_slug,'company');
 			$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;

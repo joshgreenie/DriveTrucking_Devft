@@ -310,6 +310,10 @@
 
     $(document).ready(function () {
 
+        $('input[value="Ship Within 3 Business Days|5"]').closest('li.gfield').addClass('gfield_visibility_hidden');
+
+        jQuery("#gform_XX").attr("target", "_blank");
+
         $('input#user_login').attr("placeholder", "Username");
         $('input#user_pass').attr("placeholder", "Password");
 

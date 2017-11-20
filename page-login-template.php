@@ -43,7 +43,7 @@ get_header(); ?>
         // Login form arguments.
         $args = array(
             'echo' => true,
-            'redirect' => home_url('/dashboard/'),
+//            'redirect' => home_url('/dashboard/'),
             'form_id' => 'loginform',
             'label_username' => __('Username'),
             'label_password' => __('Password'),

@@ -107,11 +107,11 @@ $login_text = get_field('login_text', 'option');
                             <?= $adspace; ?>
                         </div>
                     <?php endif; ?>
-                    <?php if ($login_url): ?>
-                        <div class="drive-trucking-login">
-                            <a href="<?= $login_url; ?>"><?= $login_text; ?></a>
-                        </div>
-                    <?php endif; ?>
+                    <?php if (is_user_logged_in()):
+                        echo '<div class="drive-trucking-login"><a href="' . wp_logout_url('/login') . '">' . __("Log Out") . '</a></div>';
+                    else:
+                        echo '<div class="drive-trucking-login"><a href="' . driver_login_url(get_permalink()) . '">' . __("Log In") . '</a></div>';
+                    endif; ?>
                 </div>
 
             </div>

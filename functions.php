@@ -120,6 +120,15 @@ function _scorch_widgets_init() {
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
     ) );
+    register_sidebar( array(
+        'name'          => esc_html__( 'Blog', '_scorch' ),
+        'id'            => 'blog',
+        'description'   => '',
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
 	register_sidebar( array(
 		'name'          => __( 'Footer One', '_scorch' ),
 		'id'            => 'footer-1',
@@ -286,4 +295,5 @@ require get_template_directory() . '/inc/redirects.php';
  * Load shortcodes file.
  */
 require get_template_directory() . '/inc/shortcodes.php';
+
 

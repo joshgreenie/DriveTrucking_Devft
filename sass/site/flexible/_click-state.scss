@@ -3,6 +3,7 @@
   float: left;
   padding: 50px 0;
 
+
   #vmap {
     min-height: 500px;
 
@@ -22,35 +23,35 @@
   }
 
 
-  @media screen and (max-width: $breakpoint-desktop) {
-    width: calc(100% - 525px);
-  }
-
-
-  @media screen and (max-width: $breakpoint-small-desktop) {
-    width: 100%;
-    position: relative;
-    padding-bottom: 75px;
-
-    &:after {
-      content: '';
-      height: 50px;
-      width: 300%;
-      background: #02233a;
-      display: block;
-      position: absolute;
-      bottom: 0;
-      right: -150%;
-      left: -150%;
-      margin: auto;
+    @media screen and (max-width: $breakpoint-desktop) {
+      width: calc(100% - 525px);
     }
+
+    @media screen and (max-width: $breakpoint-small-desktop) {
+      width: 100%;
+      position: relative;
+      padding-bottom: 75px;
+
+      &:after {
+        content: '';
+        height: 50px;
+        width: 300%;
+        background: #02233a;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: -150%;
+        left: -150%;
+        margin: auto;
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      width: 100%;
+    }
+
   }
 
-  @media screen and (max-width: $breakpoint-tablet) {
-    width: 100%;
-  }
-
-}
 
 .job-flag-feed {
   width: 650px;
@@ -121,9 +122,9 @@ div[class*=flag-border] {
     width: calc(50% + 6px);
 
     @media screen and (max-width: $breakpoint-desktop) {
-    width: calc(50% + 4px);
-    left: -2px;
-    bottom: -26px;
+      width: calc(50% + 4px);
+      left: -2px;
+      bottom: -26px;
 
     }
     @media screen and (max-width: $breakpoint-small-desktop) {
@@ -153,7 +154,7 @@ div[class*=flag-border] {
     right: -3px;
 
     @media screen and (max-width: $breakpoint-desktop) {
-    right: -2px;
+      right: -2px;
     }
     @media screen and (max-width: $breakpoint-small-desktop) {
       left: auto !important;
@@ -167,17 +168,15 @@ div[class*=flag-border] {
     }
   }
 
-
   .flag-wrapper {
     border-left: 1px solid #8a8f92;
     border-right: 1px solid #8a8f92;
     padding: 20px 40px;
 
-
     .flag-inner-wrapper {
       margin-bottom: -45px;
       @media screen and (max-width: $breakpoint-small-desktop) {
-      margin-bottom: -75px;
+        margin-bottom: -75px;
       }
 
       @media screen and (max-width: $breakpoint-tablet) {
@@ -291,10 +290,10 @@ div[class*=flag-border] {
       overflow: hidden;
 
       @media screen and (max-width: $breakpoint-phone) {
-      display: flex;
-      flex-direction: column;
-      border-top: 1px solid #dedede;
-      padding: 0px 0 20px 0;
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid #dedede;
+        padding: 0px 0 20px 0;
       }
 
       &.new {
@@ -337,7 +336,7 @@ div[class*=flag-border] {
       display: inline-block;
 
       @media screen and (max-width: $breakpoint-phone) {
-      order: 2;
+        order: 2;
       }
     }
 
@@ -382,7 +381,6 @@ div[class*=flag-border] {
         float: left;
         margin-right: 6px;
 
-
         @media screen and (max-width: $breakpoint-small-tablet) {
           display: block;
           float: none;
@@ -426,8 +424,7 @@ div[class*=flag-border] {
     }
   }
 
-
-  &.small{
+  &.small {
     width: 480px;
     padding: 0px 25px 18px;
 
@@ -451,7 +448,6 @@ div[class*=flag-border] {
       width: 100%;
       position: static;
     }
-
 
     &:before,
     &:after {
@@ -508,7 +504,6 @@ div[class*=flag-border] {
           left: 23px;
         }
       }
-
 
       .flag-inner-wrapper {
         display: flex;

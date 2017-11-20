@@ -173,3 +173,14 @@ color: $color_light_blue;
     }
   }
 }
+
+tfoot a {
+  color: #fff;
+  &:visited {
+    color: #fff;
+  }
+  &:hover,
+  &:active {
+    color: #e29c00;
+  }
+}

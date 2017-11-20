@@ -11,7 +11,7 @@
  *
  * @package _scorch
  *
- * Template Name: Account pages
+ * Template Name: Driver Dashboard page
  *
  */
 
@@ -33,19 +33,8 @@ $user = wp_get_current_user();
         <main id="main" class="site-main" role="main">
             <?php
             while (have_posts()) : the_post();
-//
-//                if ( in_array( 'driver', (array) $user->roles ) ) {
-//                    get_template_part('template-parts/account', 'driver');
-//                }
-//
-//                if ( in_array( 'recruiter', (array) $user->roles ) ) {
-//                    get_template_part('template-parts/account', 'recruiter');
-//                }
-//
-//
-//                if ( in_array( 'administrator', (array) $user->roles ) ) {
-                    get_template_part('template-parts/content', 'page');
-//                }
+
+                    get_template_part('template-parts/content', 'dashboard');
 
 
             endwhile; // End of the loop.

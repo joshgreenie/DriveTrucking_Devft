@@ -1,5 +1,9 @@
 <?php
-$content = get_field('content');
+$queried_object = get_queried_object();
+$taxonomy = $queried_object->taxonomy;
+$term_id = $queried_object->term_id;
+
+$content = get_field('content', $queried_object);
 ?>
 
 <div class="iframe-state">

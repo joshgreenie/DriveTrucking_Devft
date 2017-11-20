@@ -1,3 +1,4 @@
+
 .job-feed {
 
   position: relative;
@@ -50,7 +51,6 @@
         border-radius: 2px;
       }
     }
-
 
     h3.post-title a {
       color: black;
@@ -121,23 +121,23 @@
   }
 }
 
-@media screen and (max-width: $breakpoint-tablet){
+@media screen and (max-width: $breakpoint-tablet) {
 
-.job-feed .post-content {
-  width: 100%;
-  flex-basis: 100%;
-  margin-bottom: 40px;
-  max-width: 500px;
-  margin-right: auto;
-  margin-left: auto;
+  .job-feed .post-content {
+    width: 100%;
+    flex-basis: 100%;
+    margin-bottom: 40px;
+    max-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .job-feed .post-content .post-footer {
+    padding-top: 30px;
+  }
 }
 
-.job-feed .post-content .post-footer {
-  padding-top: 30px;
-}
-}
-
-@media screen and (max-width: $breakpoint-small-tablet){
+@media screen and (max-width: $breakpoint-small-tablet) {
   .job-feed .post-content .post-meta > span:after {
     content: none;
   }
@@ -177,3 +177,206 @@
   }
 }
 
+.single-jobs.jobs-template-default {
+  #content {
+    max-width: 100%;
+    #primary {
+      &:last-child {
+        width: 100%;
+      }
+      #main {
+        margin: 0;
+        article {
+
+          header.header-wrapper {
+            border-bottom: 15px solid #03243b;
+            .entry-meta {
+              margin: 0;
+            }
+            .entry-header {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 16px 0px;
+              .entry-title {
+                color: #03243b;
+                font-style: italic;
+                font-family: 'Droid Serif', sans-serif;
+                font-weight: bolder;
+                margin: 0;
+                font-size: 2.4rem;
+                max-width: 100%;
+                margin: 0;
+              }
+              .entry-date {
+                font-size: 12px;
+                text-align: right;
+                strong {
+                  display: block;
+                }
+              }
+            }
+            .apply {
+              margin: 0;
+            }
+            a {
+              border-radius: 0;
+              margin: 0;
+            }
+          }
+
+          .entry-content {
+            float: left;
+            padding: 0 50px 0 0;
+            width: calc(100% - 500px);
+
+            @media screen and (max-width: $breakpoint-desktop) {
+              width: calc(100% - 525px);
+            }
+
+            @media screen and (max-width: $breakpoint-small-desktop) {
+              width: 100%;
+              position: relative;
+              padding-bottom: 75px;
+
+            }
+            @media screen and (max-width: $breakpoint-tablet) {
+              width: 100%;
+            }
+
+            #company-info {
+              max-width: 300px;
+              float: left;
+              text-align: center;
+              font-style: italic;
+              font-family: 'Droid Serif', sans-serif;
+              font-weight: bolder;
+
+              text-align: center;
+              padding: 5px;
+              box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.12);
+              background: rgba(0, 0, 0, 0.06);
+              border: 1px solid #e8e8e8;
+              a {
+                display: inline-block;
+
+                img {
+                  display: inline-block;
+                }
+              }
+
+              h3 {
+                margin: 20px 0 10px;
+                font-size: 26px;
+                color: #03243b;
+              }
+              a {
+                color: $color_dark_blue;
+                &:hover {
+                  color: $color_gold;
+                }
+              }
+            }
+
+            .description {
+              float: left;
+              max-width: calc(100% - 300px);
+              padding-left: 30px;
+            }
+
+            .repeater-blocks {
+              border: 1px solid #8a8f92;
+              clear: both;
+              display: inline-block;
+              width: 100%;
+              padding: 20px;
+              border-radius: 1px;
+              margin-top: 30px;
+              .repeater-block {
+                float: left;
+                @include j-column(1/2, 0, 2, 1);
+                &:nth-of-type(2n + 1):last-child {
+                  margin: 0;
+                  width: 100%;
+                }
+              }
+            }
+          }
+
+          .job-flag-feed.single-job {
+            width: 500px;
+            margin-bottom: 60px;
+
+            &:after,
+            &:before {
+              bottom: -25px;
+              width: calc(50% + 5px);
+            }
+            .flag-wrapper {
+              padding-bottom: 30px;
+              &:after,
+              &:before {
+                bottom: 2px;
+                width: calc(50% - 21px);
+              }
+            }
+
+            a#bottom-apply.blue-arrow {
+              min-width: 100% !important;
+            }
+            .location h4 {
+              font-size: 26px;
+            }
+
+            .location,
+            .freight-type,
+            .driver-type,
+            .run-type {
+              display: flex;
+              width: 100% !important;
+              justify-content: space-between;
+              align-items: flex-start;
+              padding-bottom: 7px;
+              margin-bottom: 8px;
+              border-bottom: 1px solid #eee;
+
+              h4 {
+                font-weight: 600;
+                display: inline-block;
+                color: $color_dark_blue;
+              }
+              div {
+                text-align: right;
+              }
+            }
+
+            .location {
+              align-items: center;
+            }
+
+
+            .repeater-sidebar-block {
+              width: 100% !important;
+              margin: 0 0 15px 0 !important;
+              ul {
+                margin: 0px 20px !important;
+              }
+            }
+
+            .enticement-content {
+              margin-bottom: 15px;
+            }
+
+            .call {
+              clear: both;
+              margin: 20px 0;
+              font-size: 32px;
+              font-family: 'Droid Serif', sans-serif;
+              font-weight: bolder;
+            }
+          }
+        }
+      }
+    }
+  }
+}

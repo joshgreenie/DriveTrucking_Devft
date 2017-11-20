@@ -43,11 +43,14 @@
                 <?php
                 $location = get_terms('location', array('hide_empty' => true, 'fields' => 'all'));
                 $loc_query = array(array('relation' => 'AND'));
-                $location_get = $_GET['location'];
+                $location_get = '';
+                if(isset($_GET['location'])) {
+                    $location_get = $_GET['location'];
                 $location_string = preg_replace("/[\-]/", " ", $location_get);
                 $location_capital_string = ucwords($location_string);
 
-                if ($location_get):
+                }
+                if ($location_get != ''):
                     echo "<h2 class='heading'>$location_capital_string</h2>";
                 else:
                     echo "<h2 class='heading'>Recent Job Postings</h2>";

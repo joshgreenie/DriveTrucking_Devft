@@ -43,7 +43,7 @@ $background_image_url = $background_image['url'];
                                     var regionTrim = region.replace(/\s+/g, '-').toLowerCase(),
                                         urlBase = window.location.protocol + "//" + window.location.host + "/";
 
-                                    window.location.replace(urlBase+'/'+regionTrim);
+                                    window.location.replace(urlBase+''+regionTrim);
                                 }
                             });
                         });

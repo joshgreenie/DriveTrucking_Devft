@@ -100,8 +100,15 @@ $login_text = get_field('login_text', 'option');
     <?php
 
     $add_base_flexible_fields = get_field('add_base_flexible_fields');
-    if (!$add_base_flexible_fields && !is_page_template('page-login-template.php') && !is_tax('location')):
+    if (
+        $add_base_flexible_fields !== 'no'
+        && !is_page_template('page-login-template.php')
+        && !is_tax('location')
+        && !is_home()
+        || is_page_template('page-account.php')
+    ):
     ?>
-    <div id="content" class="site-content">
 
-        <?php endif; ?>
+    <div id="content" class="site-content">
+    <?php endif; ?>
+

@@ -71,7 +71,20 @@
     }
   }
 }
+.flex-content-wrapper .gform_wrapper {
+  margin-bottom: 100px;
+  display: inline-block;
+  width: 100%;
+}
 
+.ginput_container.ginput_container_password span {
+  &.ginput_left {
+    padding-right: 15px;
+  }
+  &.ginput_right {
+    padding-left: 15px;
+  }
+}
 
 li.gfield {
 

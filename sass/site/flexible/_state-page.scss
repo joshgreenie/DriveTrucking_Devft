@@ -5,6 +5,16 @@ div#isotope-select {
 
 .tax-location {
 
+  .top-header .grid-container {
+    display: flex;
+    #brand {
+      flex-grow: 0.65;
+    }
+    .drive-trucking-login {
+      flex-grow: 0.35;
+    }
+  }
+
   .top-header .drive-trucking-adspace.company-profile {
     max-width: calc(100% - 633px);
     margin-right: 0;

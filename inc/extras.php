@@ -416,6 +416,89 @@ function filter_entry_taxonomy_name($entries)
 
 
 add_action("gform_user_registered", "autologin", 10, 4);
-function autologin($user_id, $config, $entry, $password) {
+function autologin($user_id, $config, $entry, $password)
+{
     wp_set_auth_cookie($user_id, false, '');
 }
+
+
+function add_query_vars_filter($vars)
+{
+    $vars[] = "company-name";
+    return $vars;
+}
+
+add_filter('query_vars', 'add_query_vars_filter');
+
+add_action('login_form_middle', 'add_lost_password_link');
+function add_lost_password_link()
+{
+    return '<p class="password-reset"><a href="' . wp_lostpassword_url(get_permalink()) . '" title="Lost Password">Lost Password</a></p>';
+}
+
+
+function admin_login_redirect( $url, $request, $user ){
+    if( $user && is_object( $user ) && is_a( $user, 'WP_User' ) ) {
+        if( $user->has_cap( 'administrator' ) ) {
+            $url = admin_url();
+        }
+    }
+    return $url;
+}
+add_filter('login_redirect', 'admin_login_redirect', 10, 3 );
+
+function recruiter_login_redirect( $url, $request, $user ){
+    if( $user && is_object( $user ) && is_a( $user, 'WP_User' ) ) {
+        if( $user->has_cap('recruiter_enterprise') || $user->has_cap('recruiter_professional') || $user->has_cap('recruiter'))   {
+            $url = home_url() . '/recruiter-dashboard/';
+        } else {
+
+        }
+    }
+    return $url;
+}
+add_filter('login_redirect', 'recruiter_login_redirect', 10, 3 );
+
+
+
+function driver_login_redirect( $url, $request, $user ){
+    if( $user && is_object( $user ) && is_a( $user, 'WP_User' ) ) {
+        if( $user->has_cap('driver'))   {
+            $url = home_url() . '/dashboard/';
+        } else {
+
+        }
+    }
+    return $url;
+}
+add_filter('login_redirect', 'driver_login_redirect', 10, 3 );
+
+
+
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url('/wp-content/uploads/2016/05/Drive-Trucking-logo-e1505363553954.png');
+            height: 70px;
+            min-width:320px;
+            background-size: initial;
+            background-repeat: no-repeat;
+        }
+    </style>
+<?php }
+
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+
+
+//function transient_login_redirect( $url, $request, $user ) {
+//    if ( $user && is_object( $user ) && is_a( $user, 'WP_User' ) ) {
+//        if (!$user->has_cap('administrator') && !$user->has_cap('staff') ) {
+//            //go away
+//            $url= home_url('/access-denied');
+//        }
+//    }
+//    return $url;
+//}
+//add_filter('login_redirect', 'transient_login_redirect', 10, 3);
+
